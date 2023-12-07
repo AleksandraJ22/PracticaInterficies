@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="444dp"
+        android:layout_margin="50dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            android:layout_marginTop="50dp"
+            android:gravity="start|top"
+            android:text="@string/campo_correo"
+            android:textSize="18dp" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+
+            />
+
+        <Button
+            android:id="@+id/button"
+            style="@style/boton_de_enviar_link"
+            android:text="@string/link" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/pop_up_link_enviado"
+
+>
+
+        <TextView
+            android:id="@+id/textView7"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            android:text="@string/link_enviado" />
+    </LinearLayout>
+
+</LinearLayout>

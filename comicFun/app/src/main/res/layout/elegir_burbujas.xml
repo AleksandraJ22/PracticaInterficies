@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul_claro"
+
+    >
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pantalla_burbujas"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/burbuja_dialogo"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="121dp" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/burbuja_grito"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="256dp" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/burbuja_pensamientos"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="381dp" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/burbuja_debilidad"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="496dp" />
+
+    <HorizontalScrollView
+        android:layout_width="372dp"
+        android:layout_height="96dp"
+
+        android:layout_marginTop="152dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="63dp"
+                android:layout_height="59dp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+
+                android:src="@drawable/burbuja_dialogo" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="80dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/burbuja_dialogo1" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="372dp"
+        android:layout_height="96dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="280dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="387dp"
+        android:layout_height="75dp"
+        android:background="@color/white"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="405dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="405dp"
+        android:layout_height="89dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="535dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/button12"
+        style="@style/main_boton"
+        android:text="@string/okei"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <Button
+        android:id="@+id/button13"
+        style="@style/main_boton"
+        android:layout_marginEnd="52dp"
+        android:text="@string/inicio"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

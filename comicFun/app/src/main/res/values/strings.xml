@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">comicFun</string>
+    #Pantalla inicio
+
+
+    <string name="sign_in">Sign in</string>
+
+
+    <string name="sign_up">Sign up</string>
+
+
+
+    #Pantalla sign up
+
+    #texto sign up
+
+    <string name="nombre">Nombre</string>
+    <string name="Apellido">Apellido</string>
+    <string name="correo">Correo</string>
+    <string name="Usuario">Usuario</string>
+
+    <string name="contraseña">Contraseña</string>
+    <string name="astericos">*********</string>
+
+    <string name="repite_contra">Repite Contraseña</string>
+
+    <string name="boton_continuar">Continuar</string>
+    <string name="boton_volver">Volver</string>
+
+    #pantalla politica de privacidad
+
+    <string name="politica">Política de Privacidad</string>
+    <string name="texto_politica">Para proceder al registro, acceso y posterior uso de
+
+la Aplicación,el Usuario deberá facilitar -de forma
+voluntaria-, datos de carácter personal (esencialmente, identificativos y de contacto), los cuales serán incorporados a soportes automatizados titularidad
+de comicFun.\n\n
+
+La recogida, almacenamiento, modificación, estructuración y en su caso, eliminación, de los datos proporcionados por los Usuarios, constituirán operaciones de tratamiento llevadas a cabo por el Responsable, con la finalidad de garantizar el correcto funcionamiento de la Aplicación, mantener la relación de prestación de servicios y/o comercial con el Usuario, y para la gestión, administración, información, prestación y mejora del servicio.\n\n
+
+Los datos personales facilitados por el Usuario especialmente, el correo electrónico o e-mail-
+podrán emplearse también para remitir boletines (newsletters), así como comunicaciones comerciales de promociones y/o publicidad de la Aplicación, siempre y cuando, el Usuario haya prestado previamente su consentimiento expreso para
+la recepción de estas comunicaciones vía electrónica.</string>
+
+
+    #--pantalla iniciar sesion----
+
+    #usuario
+    #contraseña
+
+    <string name="aceptar">Aceptar</string>
+    <string name="rememberMe">Remember me</string>
+
+    <string name="olvidado_contraseña"><u>forgot password</u></string>
+
+
+    #pantalla introduce tu correo
+    <string name="recuperar_contra">Recuperar contraseña</string>
+<string name="campo_correo">Introduce tu correo:</string>
+    <string name="link">Enviar link</string>
+<string name="link_enviado">Un link para recuperar la\n contraseña se ha enviado\n al correo</string>
+    <string name="email">gmail</string>
+
+
+    #pantalla cambiar la contraseña
+    <string name="cambio">Cambia la contraseña</string>
+    <string name="nueva_contraseña">Introduce nueva contraseña:</string>
+    #repite contraseña
+    <string name="cambios_guardados">Cambios guardados!</string>
+    <string name="login"><u>Log in</u></string>
+
+
+
+
+    #pantalla de bienvenida, crear comic o elegir existente
+
+    <string name="bienvenida">Bienvenid@!</string>
+    <string name="opcion">Elige una opción</string>
+    <string name="crear_comic">Crear</string>
+    <string name="editar_existente">Editar</string>
+
+
+    #pantalla seleccionar comic
+    <string name="seleccionar_comic">Seleccionar Comic</string>
+    <string name="inicio">Inicio</string>
+
+
+#pantalla historial comics
+
+    <string name="buscador">Search</string>
+
+
+
+    #comic
+    <string name="comencemos">Comencemos!</string>
+    <string name="btn_guardar"><u>Guardar</u></string>
+    <string name="personajes">Lista personajes</string>
+    <string name="elige_personaje">Elige un personaje</string>
+    <string name="expresion_facial">Elige una expresión facial</string>
+<string name="gesto">Elige gesto</string>
+    <string name="okei">OK</string>
+<string name="lista_fondos">Lista fondo</string>
+    <string name="color_solido_y_patrong">Color sólido y patrón</string>
+    <string name="paisaje">Paisaje</string>
+    <string name="clima">Clima</string>
+
+
+    <string name="pantalla_burbujas">Elegir burbuja</string>
+    <string name="burbuja_dialogo">Diálogo</string>
+
+    <string name="burbuja_grito">Grito</string>
+<string name="burbuja_pensamientos">Pensamientos</string>
+<string name="burbuja_debilidad">Debilidad</string>
+
+
+
+    #pantalla guardar comic
+
+
+    <string name="nombre_del_comic">Nombre del comic</string>
+<string name="guardar">Guardar</string>
+    <string name="guardar_como">Guardar como...</string>
+
+</resources>

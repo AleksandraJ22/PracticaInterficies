@@ -1,0 +1,242 @@
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+<!-- Base application theme. -->
+
+    <style name="app_name">
+
+
+
+
+    </style>
+
+#pantalla inicio (logo y dos botones)
+    <style name="logo_pantalla_principal">
+
+
+        <item  name="android:layout_width">220dp</item>
+        <item name="android:layout_height">146dp</item>
+
+        <item name="android:layout_gravity">center</item>
+
+        <item name="android:layout_centerInParent">true</item>
+
+
+    </style>
+
+
+    #se usa en la pantalla de inicio
+    <style name="boton">
+        <item name="android:layout_width">143dp</item>
+        <item name="android:layout_height">57dp</item>
+        <item name="android:backgroundTint">@color/azul</item>
+        <item name="android:textColor">@color/white</item>
+      <!--  <item name="android:textColorLink">#2196F3</item>-->
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_centerVertical">true</item>
+       <!-- <item name="android:strokeColor">#2196F3</item>-->
+
+
+    </style>
+
+    <style name="boton_tamaño_letra_alternativo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/azul</item>
+        <item name="android:textColor">@color/white</item>
+        <!--  <item name="android:textColorLink">#2196F3</item>-->
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <!-- <item name="android:strokeColor">#2196F3</item>-->
+
+
+    </style>
+
+
+
+
+<style name = "boton_azul" parent="TextAppearance.AppCompat">
+
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:fontFamily">@font/montserratregular</item>
+    <item name="android:background">@color/azul</item>
+
+    <item name="android:textSize">18dp</item>
+    <item name="android:textAlignment">center</item>
+    <item name="android:gravity">center</item>
+
+
+</style>
+
+    <style name = "boton_azul_alternativo" parent="TextAppearance.AppCompat">
+
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+
+        <item name="android:fontFamily">@font/montserratregular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/azul</item>
+
+        <item name="android:textSize">18dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+
+
+    </style>
+
+
+
+
+    #pantalla bienvenida---> crear comic o editar existente
+
+<style name = "boton_actividad1" parent="TextAppearance.AppCompat">
+
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:fontFamily">@font/montserratbold</item>
+    <item name="android:backgroundTint">@color/black</item>
+    <item name="cornerRadius">50dp</item>
+    <item name="android:layout_marginBottom">20dp</item>
+    <item name="android:layout_marginTop">20dp</item>
+    <item name="android:textSize">18dp</item>
+    <item name="android:textAlignment">center</item>
+    <item name="android:gravity">center</item>
+
+
+
+</style>
+
+    <style name = "boton_actividad2" parent="TextAppearance.AppCompat">
+
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/montserratbold</item>
+        <item name="android:backgroundTint">@color/black</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+
+
+
+
+    </style>
+
+    #------------------------------------------------------------------------------------------------------------------
+
+
+    #pantalla forgot_pass
+
+
+
+    <style name = "boton_de_enviar_link" parent="TextAppearance.AppCompat">
+
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:backgroundTint">@color/azul</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">443px</item>
+
+    </style>
+
+
+    <style name="pop_up_link_enviado" parent="TextAppearance.AppCompat">
+
+        <item name="android:background">@color/fondo_pop_ups</item>
+        <item name="android:backgroundTint">@color/fondo_pop_ups</item>
+        <item name="android:layout_width">411dp</item>
+        <item name="android:layout_height">187dp</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:layout_weight">1</item>
+      <!--  <item name="android:gravity">center</item>-->
+
+        <item name="android:layout_gravity">end|bottom</item>
+
+
+    </style>
+
+
+    #------------------------------------------------------------------------------------------------------------------
+
+
+    <style name="pantalla_camviar_contraseña" parent="TextAppearance.AppCompat">
+
+        <item name="android:layout_width">match_parent</item>
+   <item name="android:layout_height">491dp</item>
+<item name="android:layout_gravity">center</item>
+ <item name="android:layout_margin">50dp</item>
+<item name="android:layout_marginStart">50dp</item>
+       <item name="android:layout_marginLeft">50dp</item>
+     <item name="android:layout_marginTop">50dp</item>
+        <item name="android:layout_marginEnd">50dp</item>
+    <item name="android:layout_marginRight">50dp</item>
+        <item name="android:layout_marginBottom">50dp</item>
+        <item name="android:orientation">vertical</item>
+
+
+
+    </style>
+
+    <style name="campo1" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">42dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+
+
+
+    <style name="boton_texto_subrayado">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:backgroundTint">@color/transparente</item>
+        <item name="android:fontFamily">@font/montserratbold</item>
+
+
+    </style>
+
+
+    #pantalla lista personaje
+
+    <style name="main_boton">
+        <item name="android:layout_width">123dp</item>
+        <item name="android:layout_height">56dp</item>
+<item name="android:backgroundTint">@color/azul_alternativo</item>
+        <item name="android:fontFamily">@font/montserratregular</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+
+    <style name="Theme.ComicFun" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/azul</item>
+        <item name="colorPrimaryVariant">@color/azul_alternativo</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="android:background">@color/white</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="colorSurface">@color/azul_claro</item>
+      <!--  <item name="colorOnSurface">@color/azul_claro</item>-->
+
+        <!-- Secondary brand color. -->
+        <!-- <item name="colorSurface">@color/azul_claro</item>-->
+        <!-- <item name="colorSecondary">@color/azul_claro</item>
+         <item name="colorSecondaryVariant">@color/white</item>
+         <item name="colorOnSecondary">@color/black</item>-->
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+</resources>

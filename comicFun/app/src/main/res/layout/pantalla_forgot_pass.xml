@@ -38,7 +38,10 @@
             style="@style/boton_de_enviar_link"
             android:text="@string/link"
             app:cornerRadius="20dp"
-            android:layout_marginTop="100dp"/>
+            android:layout_marginTop="100dp"
+
+
+        />
 
 
     </LinearLayout>
@@ -62,6 +65,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="32dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/boton_cruz"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -13,6 +13,8 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:text="@string/sign_in"
+        android:textColor="@color/black"
+       
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -27,18 +29,20 @@
         android:gravity="center|start"
         android:text="@string/Usuario"
         android:textSize="18dp"
+        android:textColor="@color/black"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="52dp"
         tools:layout_editor_absoluteY="168dp" />
 
     <EditText
-        android:layout_width="204dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="210dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         android:textSize="18dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -49,6 +53,7 @@
         android:gravity="center|start"
         android:text="@string/contraseña"
         android:textSize="18dp"
+        android:textColor="@color/black"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="52dp"
         tools:layout_editor_absoluteY="295dp" />
@@ -60,6 +65,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:textSize="18dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
@@ -79,12 +85,11 @@
 
     <Button
         android:id="@+id/button4"
-        style="@style/boton_azul"
-        app:cornerRadius="20dp"
-
+        style="@style/boton_tamaño_letra_alternativo"
+       
 
         android:text="@string/rememberMe"
-
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"

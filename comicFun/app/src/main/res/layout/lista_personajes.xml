@@ -46,7 +46,7 @@
         app:cornerRadius="10dp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
+        app:layout_constraintTop_toBottomOf="@+id/meh3"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/meh3" />
 
     <HorizontalScrollView
         android:id="@+id/meh"
@@ -73,7 +73,8 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView19">
+        app:layout_constraintTop_toBottomOf="@id/textView19"
+        android:contentDescription="bla bla">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -139,7 +140,7 @@
         android:layout_width="372dp"
         android:layout_height="107dp"
         android:layout_marginLeft="20dp"
-
+        android:contentDescription="bla bla"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
 
@@ -172,13 +173,14 @@
         app:layout_constraintTop_toBottomOf="@+id/meh2" />
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView2"
+        android:id="@+id/meh3"
         android:layout_width="372dp"
         android:layout_height="107dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21">
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        android:contentDescription="bla bla">
 
         <LinearLayout
             android:layout_width="wrap_content"

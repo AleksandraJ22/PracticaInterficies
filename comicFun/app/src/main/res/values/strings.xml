@@ -87,9 +87,18 @@ la recepción de estas comunicaciones vía electrónica.</string>
 
 #pantalla historial comics
 
-    <string name="buscador">Search</string>
+    <string name="buscador">busca comic</string>
 
+<string name="añadir">Añadir</string>
+    <string name="texto">Una vez guardado, podrás verlo\n en el historial de comics!</string>
+    <string name="ahora">Ahora puedes ir a inicio\n</string>
 
+    <string name="volver_inicio"><u>Ir a inicio</u> </string>
+
+    <string name="ir_a_inicio"></string>
+
+    <string name="btn_mas">+</string>
+    <string name="btn_menos">-</string>
 
     #comic
     <string name="comencemos">Comencemos!</string>
@@ -112,7 +121,10 @@ la recepción de estas comunicaciones vía electrónica.</string>
 <string name="burbuja_pensamientos">Pensamientos</string>
 <string name="burbuja_debilidad">Debilidad</string>
 
+    <string name="btn_personajes">Personajes</string>
 
+<string name="btn_fondo">Fondo</string>
+    <string name="btn_burbujas">Burbujas</string>
 
     #pantalla guardar comic
 

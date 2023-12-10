@@ -1,20 +1,18 @@
 package com.example.comicfun
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-import androidx.appcompat.app.AppCompatActivity
-
-class lista_fondo : AppCompatActivity() {
-
+class personajes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.lista_fondo)
+        setContentView(R.layout.lista_personajes)
     }
 
 
-    fun OkFondo(view: View){
+    fun OkPersonaje(view:View){
 
 
 
@@ -25,7 +23,7 @@ class lista_fondo : AppCompatActivity() {
     }
 
 
-    fun volverSinSeleccionarFondo(view: View){
+    fun volverSinSeleccionarNada(view:View){
 
         val intent= Intent(this, CrearComic::class.java).apply{}
         startActivity(intent);

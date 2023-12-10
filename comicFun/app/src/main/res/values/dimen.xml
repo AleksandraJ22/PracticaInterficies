@@ -4,4 +4,22 @@
     <dimen name="margen">10dp</dimen>
 
     <dimen name="margen_pantalla_principal">50dp</dimen>
+
+
+    <dimen name="margen_derecha">20dp</dimen>
+    <dimen name="margen_izquierda">20dp</dimen>
+    <dimen name="margen_arriba"
+        >10dp</dimen>
+
+
+
+    <dimen name="btn_margen_dyi">56dp</dimen>
+    <dimen name="btn_margen_arriba">44dp</dimen>
+    <dimen name="btn_margen_dentro">19dp</dimen>
+
+
+    <dimen name="espacio_iz">10dp</dimen>
+    <dimen name="esp_foto_y_foto">20dp</dimen>
+
+
 </resources>

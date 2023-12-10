@@ -8,14 +8,17 @@
 
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScroll2"
+        android:id="@+id/horizontalScroll1"
         android:layout_width="372dp"
         android:layout_height="107dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginStart="@dimen/margen_izquierda"
+        android:layout_marginTop="@dimen/margen_arriba"
+        android:layout_marginEnd="@dimen/margen_derecha"
         android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView26">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +43,7 @@
                 android:layout_width="78dp"
                 android:layout_height="58dp"
                 android:layout_gravity="center"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
@@ -53,13 +56,25 @@
                 android:id="@+id/imageView17"
                 android:layout_width="78dp"
                 android:layout_height="58dp"
-                android:layout_weight="1"
-                android:background="@color/azul"
-                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center_horizontal"
-                android:layout_gravity="center"/>
+                android:layout_weight="1"
+                android:background="@color/azul"
+                android:gravity="center_horizontal" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="78dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@color/purple_200"
+                android:gravity="center_horizontal" />
 
 
         </LinearLayout>
@@ -67,19 +82,21 @@
 
     <HorizontalScrollView
 
-        android:id="@+id/horizontalScroll1"
+        android:id="@+id/horizontalScroll2"
         android:layout_width="372dp"
         android:layout_height="107dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginStart="@dimen/margen_izquierda"
+        android:layout_marginTop="@dimen/margen_arriba"
+        android:layout_marginEnd="@dimen/margen_derecha"
         android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView22">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_width="372dp"
+            android:layout_height="107dp">
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -101,28 +118,31 @@
                 android:id="@+id/imageView14"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginEnd="10dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
+                android:layout_marginEnd="10dp"
 
+                android:layout_weight="1"
                 app:srcCompat="@drawable/bosque" />
 
             <ImageView
                 android:id="@+id/imageView15"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/disco"
-                android:layout_gravity="center"/>
+                android:src="@drawable/disco" />
 
             <ImageView
                 android:id="@+id/imageView19"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginEnd="10dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/baile" />
 
             />
@@ -134,25 +154,27 @@
         android:id="@+id/horizontalScroll3"
         android:layout_width="372dp"
         android:layout_height="107dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="484dp"
+        android:layout_marginStart="@dimen/margen_izquierda"
+        android:layout_marginTop="@dimen/margen_arriba"
+        android:layout_marginEnd="@dimen/margen_derecha"
         android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView23">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="372dp"
+            android:layout_height="107dp"
             android:layout_gravity="center|start">
 
             <ImageView
                 android:id="@+id/imageView11"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="20dp"
                 android:layout_gravity="center|start"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
 
                 app:srcCompat="@drawable/clima_lluvia2" />
 
@@ -160,84 +182,109 @@
                 android:id="@+id/imageView16"
                 android:layout_width="100dp"
                 android:layout_height="86dp"
-                android:layout_weight="1"
+                android:layout_gravity="center"
 
-                app:srcCompat="@drawable/balcon"
-                android:layout_marginEnd="20dp"/>
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/balcon" />
 
             <ImageView
                 android:id="@+id/imageView18"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
 
-                app:srcCompat="@drawable/tornado"
-                android:layout_marginEnd="20dp"/>
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tornado" />
         </LinearLayout>
     </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/color_solido_y_patrong"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="140dp"
-        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/transparente"
+        android:fontFamily="@font/balsamiqsansregular"
         android:text="@string/lista_fondos"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/transparente"
+        android:fontFamily="@font/balsamiqsansregular"
+        android:text="@string/color_solido_y_patrong"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27"
+        tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/button11"
         style="@style/main_boton"
-        android:layout_marginEnd="64dp"
+        android:layout_marginTop="@dimen/btn_margen_arriba"
 
+        android:layout_marginEnd="@dimen/btn_margen_dyi"
+        android:onClick="volverSinSeleccionarFondo"
         android:text="@string/inicio"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button10"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScroll3"
         app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/paisaje"
-        tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="301dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/transparente"
+        android:fontFamily="@font/balsamiqsansregular"
         android:text="@string/clima"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="453dp"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScroll2"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button10"
-       style="@style/main_boton"
+        style="@style/main_boton"
 
+        android:layout_marginStart="@dimen/btn_margen_dyi"
+        android:layout_marginTop="@dimen/btn_margen_arriba"
+        android:layout_marginEnd="@dimen/btn_margen_dentro"
+        android:onClick="OkFondo"
         android:text="@string/okei"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button11"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toStartOf="@id/button11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScroll3"
-        app:cornerRadius="10dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScroll3" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/transparente"
+        android:fontFamily="@font/balsamiqsansregular"
+        android:text="@string/paisaje"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScroll1"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

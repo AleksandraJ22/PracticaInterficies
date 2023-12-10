@@ -24,24 +24,25 @@
 
     <Button
         android:id="@+id/button1"
-style="@style/boton"
+        style="@style/boton"
+
+        android:onClick="signIn"
 
         android:text="@string/sign_in"
-
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64"
-       />
+        app:layout_constraintVertical_bias="0.64" />
 
     <Button
         android:id="@+id/button3"
-      style="@style/boton"
-        android:text="@string/sign_up"
+        style="@style/boton"
+        android:onClick="signUp"
 
+        android:text="@string/sign_up"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

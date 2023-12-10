@@ -40,16 +40,16 @@ android:gravity="center"
         <Button
             android:id="@+id/button5"
             style="@style/boton_actividad1"
-            android:text="@string/editar_existente"
-            />
+            android:onClick="editarComic"
+            android:text="@string/editar_existente" />
 
         <Button
             android:id="@+id/button6"
             style="@style/boton_actividad2"
 
 
-            android:text="@string/crear_comic"
+            android:onClick="crearComic"
 
-            />
+            android:text="@string/crear_comic" />
 
 </LinearLayout>

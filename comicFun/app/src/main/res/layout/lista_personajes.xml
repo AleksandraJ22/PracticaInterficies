@@ -39,12 +39,13 @@
     <Button
         android:id="@+id/button8"
         style="@style/main_boton"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="@dimen/btn_margen_dyi"
+        android:layout_marginTop="@dimen/btn_margen_arriba"
+        android:onClick="OkPersonaje"
         android:text="@string/okei"
+
         android:textSize="18dp"
         app:cornerRadius="10dp"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/meh3"
         tools:ignore="MissingConstraints" />
@@ -52,8 +53,10 @@
     <Button
         android:id="@+id/button9"
         style="@style/main_boton"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginStart="@dimen/btn_margen_dentro"
+        android:layout_marginTop="@dimen/btn_margen_arriba"
+        android:layout_marginEnd="@dimen/btn_margen_dyi"
+        android:onClick="volverSinSeleccionarNada"
         android:text="@string/inicio"
         android:textSize="18dp"
         app:cornerRadius="10dp"
@@ -66,34 +69,36 @@
         android:id="@+id/meh"
         android:layout_width="372dp"
         android:layout_height="107dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/margen_izquierda"
 
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="@dimen/margen_arriba"
+        android:layout_marginEnd="@dimen/margen_derecha"
+        android:contentDescription="bla bla"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView19"
-        android:contentDescription="bla bla">
+        app:layout_constraintTop_toBottomOf="@id/textView19">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="63dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_marginStart="@dimen/espacio_iz"
 
+                android:layout_weight="1"
                 android:src="@drawable/personaje1" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
 
                 android:layout_weight="1"
                 android:src="@drawable/personaje2" />
@@ -102,19 +107,17 @@
                 android:id="@+id/imageView4"
                 android:layout_width="91dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
                 android:layout_weight="1"
-                android:src="@drawable/perssonaje3"
-                android:layout_marginStart="10dp"
-              />
+                android:src="@drawable/perssonaje3" />
 
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="71dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="@dimen/esp_foto_y_foto"
                 android:layout_weight="1"
-                android:src="@drawable/personaje4"
-   />
+                android:src="@drawable/personaje4" />
 
         </LinearLayout>
     </HorizontalScrollView>
@@ -139,14 +142,14 @@
         android:id="@+id/meh2"
         android:layout_width="372dp"
         android:layout_height="107dp"
-        android:layout_marginLeft="20dp"
-        android:contentDescription="bla bla"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="@dimen/margen_izquierda"
+        android:layout_marginTop="@dimen/margen_arriba"
+        android:layout_marginEnd="@dimen/margen_derecha"
 
+        android:contentDescription="bla bla"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView20">
 
@@ -176,11 +179,14 @@
         android:id="@+id/meh3"
         android:layout_width="372dp"
         android:layout_height="107dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="@dimen/margen_izquierda"
+        android:layout_marginTop="@dimen/margen_arriba"
+        android:layout_marginEnd="@dimen/margen_derecha"
+        android:contentDescription="bla bla"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        android:contentDescription="bla bla">
+        app:layout_constraintTop_toBottomOf="@+id/textView21">
 
         <LinearLayout
             android:layout_width="wrap_content"

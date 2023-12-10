@@ -90,6 +90,7 @@ android:fontFamily="@font/robotoslabsemibold"
 
         android:layout_marginTop="44dp"
 
+        android:onClick="forgotPassword"
         android:text="@string/olvidado_contraseña"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +103,7 @@ android:fontFamily="@font/robotoslabsemibold"
         style="@style/boton_tamaño_letra_alternativo"
 
 
+        android:onClick="rememberMe"
         android:text="@string/rememberMe"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

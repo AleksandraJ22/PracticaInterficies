@@ -6,16 +6,16 @@ import android.view.View
 
 import androidx.appcompat.app.AppCompatActivity
 
-class lista_fondo : AppCompatActivity() {
+class lista_burbujas : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.lista_fondo)
+        setContentView(R.layout.elegir_burbujas)
     }
 
 
-    fun OkFondo(view: View){
 
+    fun OkBurbuja(view: View){
 
 
         val intent= Intent(this, CrearComic::class.java).apply{}
@@ -25,12 +25,11 @@ class lista_fondo : AppCompatActivity() {
     }
 
 
-    fun volverSinSeleccionarFondo(view: View){
+    fun volverSinSeleccionarburbuja(view: View){
 
         val intent= Intent(this, CrearComic::class.java).apply{}
         startActivity(intent);
 
 
     }
-
 }

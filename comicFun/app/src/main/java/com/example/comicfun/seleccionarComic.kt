@@ -36,4 +36,8 @@ class seleccionarComic : AppCompatActivity() {
 
     }
 
+
 }
+
+}
+

@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     fun signUp(view: View){
 
-
-
         val intent= Intent(this,registrarse::class.java).apply{}
         startActivity(intent);
     }

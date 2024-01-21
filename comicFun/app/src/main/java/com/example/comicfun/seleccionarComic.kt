@@ -28,6 +28,16 @@ class seleccionarComic : AppCompatActivity() {
         startActivity(intent);
 
     }
+    fun volverAtras(view: View){
+
+
+        val intent= Intent(this, pantallaCrearEditarComic::class.java).apply{}
+        startActivity(intent);
+
+    }
 
 
 }
+
+}
+

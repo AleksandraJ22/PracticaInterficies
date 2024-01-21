@@ -11,14 +11,10 @@ class cambiar_contra : AppCompatActivity() {
         setContentView(R.layout.pantalla_cambiar_contra_oficial)
     }
 
-
-
     fun volverAIniciarSesion(view:View){
-
 
             val intent= Intent(this, iniciar_sesion::class.java).apply{}
             startActivity(intent);
-
 
         }
 

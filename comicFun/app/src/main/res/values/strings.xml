@@ -8,11 +8,13 @@
 
     <string name="sign_up">Sign up</string>
 
-
+<string name="volver">Atrás</string>
 
     #Pantalla sign up
 
     #texto sign up
+<string name="user_name">Nombre de usuario</string>
+    <string name="num_comics">Tus comics: </string>
 
     <string name="nombre">Nombre</string>
     <string name="Apellido">Apellido</string>
@@ -132,5 +134,12 @@ la recepción de estas comunicaciones vía electrónica.</string>
     <string name="nombre_del_comic">Nombre del comic</string>
 <string name="guardar">Guardar</string>
     <string name="guardar_como">Guardar como...</string>
+
+
+
+    <string name="btn_salir">Salir</string>
+
+
+
 
 </resources>

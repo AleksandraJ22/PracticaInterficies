@@ -42,8 +42,6 @@ class AdapterFondo1(private val imagesList : ArrayList<fondo>) : RecyclerView.Ad
 
         val fondoImageView : ImageView = itemView.findViewById(R.id.ImageView)
 
-
-
     }
 
 }

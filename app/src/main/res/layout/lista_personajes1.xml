@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul_claro">
+
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@color/transparente"
+        android:fontFamily="@font/balsamiqsansregular"
+        android:text="@string/personajes"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/transparente"
+        android:fontFamily="@font/balsamiqsansregular"
+        android:text="@string/elige_personaje"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button8"
+        style="@style/main_boton"
+        android:layout_marginStart="@dimen/btn_margen_dyi"
+        android:onClick="OkPersonaje"
+        android:text="@string/okei"
+
+        android:textSize="18dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="647dp" />
+
+    <Button
+        android:id="@+id/button9"
+        style="@style/main_boton"
+        android:layout_marginStart="@dimen/btn_margen_dentro"
+        android:layout_marginEnd="@dimen/btn_margen_dyi"
+        android:onClick="volverSinSeleccionarNada"
+        android:text="@string/inicio"
+        android:textSize="18dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toEndOf="@+id/button8"
+        tools:layout_editor_absoluteY="647dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="500dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="146dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

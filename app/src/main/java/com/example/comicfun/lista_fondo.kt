@@ -17,15 +17,7 @@ class lista_fondo : AppCompatActivity() {
     private  lateinit var fondo1Adapter: AdapterFondo1
 private lateinit var fondo1List: ArrayList<fondo>
 
-/**/
-  // private lateinit var recyclerView2: RecyclerView
-//private lateinit var fondo2Adapter: AdapterFondo2
     private lateinit var fondo2List: ArrayList<fondo>
-
-
-
-    //private lateinit var recyclerView3: RecyclerView
-   // private lateinit var fondo3Adapter: AdapterFondo3
     private lateinit var fondo3List: ArrayList<fondo>
 
 

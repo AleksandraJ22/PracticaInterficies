@@ -11,22 +11,19 @@ class personajes : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
 
-    private  lateinit var fondo1Adapter: AdapterFondo1
+    private  lateinit var personajesAdapter: AdapterPersonajes
     private lateinit var personajes: ArrayList<fondo>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.lista_personajes)
+        setContentView(R.layout.lista_personajes1)
 
 
         init()
     }
-
-
-
     private fun init(){
 
-        recyclerView = findViewById(R.id.recycleView)
+        recyclerView = findViewById(R.id.Recycler_View)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager= LinearLayoutManager(this, RecyclerView.VERTICAL,false)
         personajes = ArrayList()
@@ -34,8 +31,8 @@ class personajes : AppCompatActivity() {
 
         addDataToList()
 
-        fondo1Adapter=AdapterFondo1(personajes)
-        recyclerView.adapter = fondo1Adapter
+        personajesAdapter=AdapterPersonajes(personajes)
+        recyclerView.adapter = personajesAdapter
     }
 
     private fun addDataToList(){

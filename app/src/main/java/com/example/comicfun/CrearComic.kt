@@ -9,6 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class CrearComic : AppCompatActivity() {
+
+    var listaPaneles: ArrayList<panelComic> = ArrayList()
+    companion object {
+        const val SELECCIONAR_FONDO_REQUEST_CODE = 1 // o cualquier número que elijas
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_crear_comic)
@@ -56,5 +61,34 @@ fun guardarComic(view:View){
 
 
 
+    fun onSelectBackgroundButtonClick() {
+        val intent = Intent(this, lista_fondo::class.java)
+        startActivityForResult(intent, SELECCIONAR_FONDO_REQUEST_CODE)
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == SELECCIONAR_FONDO_REQUEST_CODE && resultCode == RESULT_OK) {
+
+            val idFondoSeleccionado = data?.getIntExtra("idFondo", -1) ?: -1
+
+            if (idFondoSeleccionado != -1) {
+
+                actualizarPanelesConFondo(idFondoSeleccionado)
+            }
+        }
+    }
+
+
+    private fun actualizarPanelesConFondo(idFondo: Int) {
+        for (panel in listaPaneles) {
+            val imageView = panel.imageFondo
+            imageView.setImageResource(panel.imageFondo)
+        }
+
+        actualizarVista()
+    }
 
 }

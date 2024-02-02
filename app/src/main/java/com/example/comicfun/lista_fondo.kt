@@ -175,5 +175,20 @@ return imagesList
 
 
     }
+        fun onOkButtonClick() {
+
+            val idFondoSeleccionado = obtenerIdFondoSeleccionado()
+
+
+            val resultIntent = Intent()
+            resultIntent.putExtra("idFondo", idFondoSeleccionado)
+
+
+            setResult(RESULT_OK, resultIntent)
+            finish()
+        }
+
+
+
 
 }

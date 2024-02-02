@@ -1,6 +1,5 @@
 package com.example.comicfun
 
-package com.example.comicfun
 
 import android.view.LayoutInflater
 import android.view.View

@@ -2,24 +2,65 @@ package com.example.comicfun
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 
 class CrearComic : AppCompatActivity() {
 
-    var listaPaneles: ArrayList<panelComic> = ArrayList()
-    companion object {
-        const val SELECCIONAR_FONDO_REQUEST_CODE = 1 // o cualquier número que elijas
-    }
+
+    private lateinit var recyclerView: RecyclerView
+
+    private  lateinit var panelAdapter: AdapterPanelComic
+    private  lateinit var lista_panel: ArrayList<panelComic>
+
+   // val botonAgregar: Button = findViewById(R.id.btn_agregar_panel)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_crear_comic)
+
+       init()
+       """ botonAgregar.setOnClickListener {
+           if (lista_panel.size < 5) {
+               val nuevoPanel = panelComic(R.drawable.disco)
+               lista_panel.add(nuevoPanel)
+               panelAdapter.notifyItemInserted(lista_panel.size - 1)
+               recyclerView.scrollToPosition(lista_panel.size - 1)
+           } else {
+
+               Toast.makeText(this, "El limite maximo de paneles es 5!", Toast.LENGTH_SHORT).show()
+           }
+       }"""
+
+    }
+    private fun init(){
+
+        recyclerView = findViewById(R.id.recyclerView2)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager= LinearLayoutManager(this, RecyclerView.HORIZONTAL,false)
+        lista_panel = ArrayList()
+
+
+        addDataToList()
+
+        panelAdapter=AdapterPanelComic(lista_panel)
+        recyclerView.adapter = panelAdapter
     }
 
+    private fun addDataToList(){
 
+
+        lista_panel.add(panelComic(R.drawable.disco, R.drawable.burbuja_dialogo1,R.drawable.personaje1))
+     //   panelAdapter.notifyItemInserted(lista_panel.size - 1)
+      //  recyclerView.scrollToPosition(lista_panel.size - 1)
+
+    }
     fun regresarAtras(view: View){
 
 
@@ -27,8 +68,6 @@ class CrearComic : AppCompatActivity() {
         startActivity(intent);
 
     }
-
-
     fun verPersonajes(view:View){
 
 
@@ -59,36 +98,5 @@ fun guardarComic(view:View){
     startActivity(intent);
 }
 
-
-
-    fun onSelectBackgroundButtonClick() {
-        val intent = Intent(this, lista_fondo::class.java)
-        startActivityForResult(intent, SELECCIONAR_FONDO_REQUEST_CODE)
-    }
-
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == SELECCIONAR_FONDO_REQUEST_CODE && resultCode == RESULT_OK) {
-
-            val idFondoSeleccionado = data?.getIntExtra("idFondo", -1) ?: -1
-
-            if (idFondoSeleccionado != -1) {
-
-                actualizarPanelesConFondo(idFondoSeleccionado)
-            }
-        }
-    }
-
-
-    private fun actualizarPanelesConFondo(idFondo: Int) {
-        for (panel in listaPaneles) {
-            val imageView = panel.imageFondo
-            imageView.setImageResource(panel.imageFondo)
-        }
-
-        actualizarVista()
-    }
 
 }

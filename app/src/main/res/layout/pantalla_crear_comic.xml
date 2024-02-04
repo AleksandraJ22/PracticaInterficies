@@ -12,14 +12,13 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="48dp"
         android:background="@color/transparente"
         android:text="@string/comencemos"
         app:layout_constraintEnd_toStartOf="@+id/button7"
-        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <Button
         android:id="@+id/button7"
@@ -34,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -54,15 +53,16 @@
         android:id="@+id/button18"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="@color/azul_alternativo"
-        android:onClick="verFondos"
 
+        android:onClick="verFondos"
         android:text="@string/btn_fondo"
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="503dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
     <Button
         android:id="@+id/button19"
@@ -79,16 +79,17 @@
         app:layout_constraintTop_toBottomOf="@+id/button17" />
 
     <Button
-        android:id="@+id/button23"
+        android:id="@+id/btn_agregar_panel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
         android:backgroundTint="@color/azul_alternativo"
         android:gravity="center|center_horizontal"
         android:text="@string/btn_mas"
         android:textSize="18dp"
         app:cornerRadius="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/button19"
-        tools:layout_editor_absoluteX="120dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button19" />
 
     <Button
         android:id="@+id/button27"
@@ -99,10 +100,10 @@
         android:text="@string/btn_menos"
         android:textSize="18dp"
         app:cornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button23"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_agregar_panel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toEndOf="@+id/button23"
+        app:layout_constraintStart_toEndOf="@+id/btn_agregar_panel"
         app:layout_constraintTop_toBottomOf="@+id/button19" />
 
     <ImageButton
@@ -110,25 +111,31 @@
 
         android:layout_width="67dp"
         android:layout_height="49dp"
+        android:layout_marginTop="16dp"
         android:background="@color/transparente"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
         app:srcCompat="@drawable/agrandar"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="422dp" />
+        tools:layout_editor_absoluteX="17dp" />
 
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="67dp"
         android:layout_height="49dp"
+        android:layout_marginStart="8dp"
         android:background="@color/transparente"
-        app:srcCompat="@drawable/girar"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="422dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/girar" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
         android:layout_width="409dp"
         android:layout_height="316dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="105dp" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

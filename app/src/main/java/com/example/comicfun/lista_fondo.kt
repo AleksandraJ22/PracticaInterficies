@@ -175,7 +175,7 @@ return imagesList
 
 
     }
-        fun onOkButtonClick() {
+       /* fun onOkButtonClick() {
 
             val idFondoSeleccionado = obtenerIdFondoSeleccionado()
 
@@ -190,5 +190,5 @@ return imagesList
 
 
 
-
+*/
 }

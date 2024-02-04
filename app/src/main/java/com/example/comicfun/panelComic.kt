@@ -1,3 +1,6 @@
 package com.example.comicfun
 
-data class panelComic(val imageFondo: Int, val burbuja: Int, val personaje: Int)
+import android.widget.ImageView
+data class panelComic(val imageFondo: Int,val burbuja: Int?=null, val personaje: Int?=null)
+
+

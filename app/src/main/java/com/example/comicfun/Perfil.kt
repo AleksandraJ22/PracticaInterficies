@@ -22,10 +22,7 @@ class Perfil : AppCompatActivity() {
 
     }
 
-    fun salir(view:View?){
 
-        finish();
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
@@ -46,11 +43,10 @@ class Perfil : AppCompatActivity() {
             volverMenuPrincipal(null)
             return true
         }
+
+
         if(id==R.id.salir){
-
-            salir(null);
-            return true;
-
+            return true
         }
 
         return super.onOptionsItemSelected(item)

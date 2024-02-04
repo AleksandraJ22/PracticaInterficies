@@ -137,7 +137,11 @@ la recepción de estas comunicaciones vía electrónica.</string>
 
 
 
-    <string name="btn_salir">Salir</string>
+    <string name="btn_salir">Cerrar Sesión</string>
+
+
+    <string name="btn_salir_de_vd">Salir</string>
+
 
 
 

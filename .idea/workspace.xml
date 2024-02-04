@@ -11,13 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b135844b-931e-4273-84ba-cd0de739a5e9" name="Changes" comment="cambios? AdapterFondo1.kt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/AdapterPanelComic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/AdapterPanelComic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/CrearComic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/CrearComic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/lista_fondo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/lista_fondo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/panelComic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/panelComic.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/lista_fondo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/lista_fondo_antigua.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/panel_comic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/panel_comic.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pantalla_crear_comic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pantalla_crear_comic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/Perfil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/Perfil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/pantallaCrearEditarComic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/pantallaCrearEditarComic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

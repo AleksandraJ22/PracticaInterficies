@@ -1,4 +1,4 @@
-package com.example.comicfun
+package com.example.comicfun.Adapter
 
 
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.comicfun.R
-
+import com.example.comicfun.data.fondo
 
 
 class AdapterPersonajes(private val imagenes_de_personaje : ArrayList<fondo>) : RecyclerView.Adapter<AdapterPersonajes.ViewHolder>() {

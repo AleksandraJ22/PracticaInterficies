@@ -1,4 +1,4 @@
-package com.example.comicfun
+package com.example.comicfun.Adapter
 
 
 
@@ -7,10 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import com.example.comicfun.R
-
+import com.example.comicfun.data.comic
 
 
 class AdapterSeleccionarComic(private val listaComics : ArrayList<comic>) : RecyclerView.Adapter<AdapterSeleccionarComic.ViewHolder>() {

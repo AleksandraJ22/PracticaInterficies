@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.comicfun.Adapter.AdapterPersonajes
+import com.example.comicfun.data.fondo
 
 class personajes : AppCompatActivity() {
 
@@ -31,7 +33,7 @@ class personajes : AppCompatActivity() {
 
         addDataToList()
 
-        personajesAdapter=AdapterPersonajes(personajes)
+        personajesAdapter= AdapterPersonajes(personajes)
         recyclerView.adapter = personajesAdapter
     }
 

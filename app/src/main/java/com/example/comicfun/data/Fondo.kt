@@ -1,4 +1,4 @@
-package com.example.comicfun
+package com.example.comicfun.data
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView

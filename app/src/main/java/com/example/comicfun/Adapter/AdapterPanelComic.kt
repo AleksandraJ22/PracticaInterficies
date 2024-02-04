@@ -1,16 +1,15 @@
-package com.example.comicfun
+package com.example.comicfun.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import com.example.comicfun.R
+import com.example.comicfun.data.panelComic
 
 
-
-    class AdapterPanelComic(private val objetosPanel: ArrayList<panelComic>) : RecyclerView.Adapter<AdapterPanelComic.PanelViewHolder>() {
+class AdapterPanelComic(private val objetosPanel: ArrayList<panelComic>) : RecyclerView.Adapter<AdapterPanelComic.PanelViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PanelViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.panel_comic, parent, false)

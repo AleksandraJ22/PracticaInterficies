@@ -7,7 +7,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.comicfun.AdapterFondo1
+import com.example.comicfun.Adapter.AdapterFondo1
+import com.example.comicfun.data.fondo
 
 class lista_fondo : AppCompatActivity() {
 
@@ -51,7 +52,7 @@ private lateinit var fondo1List: ArrayList<fondo>
 
         addDataToList()
 
-        fondo1Adapter=AdapterFondo1(fondo1List)
+        fondo1Adapter= AdapterFondo1(fondo1List)
         recyclerView.adapter = fondo1Adapter
     }
 
@@ -67,7 +68,7 @@ private lateinit var fondo1List: ArrayList<fondo>
 
         addDataToList2()
 
-        fondo1Adapter=AdapterFondo1(fondo2List)
+        fondo1Adapter= AdapterFondo1(fondo2List)
         recyclerView.adapter = fondo1Adapter
     }
 
@@ -80,7 +81,7 @@ private lateinit var fondo1List: ArrayList<fondo>
         fondo3List = ArrayList()
 
         addDataToList3()
-        fondo1Adapter=AdapterFondo1(fondo3List)
+        fondo1Adapter= AdapterFondo1(fondo3List)
 
         recyclerView.adapter = fondo1Adapter
     }

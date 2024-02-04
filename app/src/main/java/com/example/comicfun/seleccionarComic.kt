@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.comicfun.Adapter.AdapterSeleccionarComic
+import com.example.comicfun.data.comic
 
 class seleccionarComic : AppCompatActivity() {
 
@@ -33,7 +35,7 @@ class seleccionarComic : AppCompatActivity() {
 
         addDataToList()
 
-        adapter=AdapterSeleccionarComic(listaDeComics)
+        adapter= AdapterSeleccionarComic(listaDeComics)
         rv.adapter = adapter
     }
     private fun addDataToList(){

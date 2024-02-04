@@ -7,6 +7,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.comicfun.Adapter.AdapterBurbujas
+import com.example.comicfun.data.fondo
 
 class lista_burbujas : AppCompatActivity() {
 
@@ -42,7 +44,7 @@ class lista_burbujas : AppCompatActivity() {
 
         addDataToList()
 
-        AdapterBurbujas=AdapterBurbujas(b_dialogo)
+        AdapterBurbujas= AdapterBurbujas(b_dialogo)
         recyclerView.adapter = AdapterBurbujas
     }
 
@@ -58,7 +60,7 @@ class lista_burbujas : AppCompatActivity() {
 
         addDataToList()
 
-        AdapterBurbujas=AdapterBurbujas(b_dialogo)
+        AdapterBurbujas= AdapterBurbujas(b_dialogo)
         recyclerView.adapter = AdapterBurbujas
     }
 
@@ -73,7 +75,7 @@ class lista_burbujas : AppCompatActivity() {
 
         addDataToList()
 
-        AdapterBurbujas=AdapterBurbujas(b_dialogo)
+        AdapterBurbujas= AdapterBurbujas(b_dialogo)
         recyclerView.adapter = AdapterBurbujas
     }
 

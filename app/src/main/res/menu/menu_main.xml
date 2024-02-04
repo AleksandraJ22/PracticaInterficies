@@ -20,7 +20,7 @@
 
 
     <item android:id="@+id/salir"
-        android:title="@string/btn_salir"
+        android:title="@string/btn_salir_de_vd"
         app:showAsAction="never"
 
       />

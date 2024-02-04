@@ -43,11 +43,10 @@ class Perfil : AppCompatActivity() {
             volverMenuPrincipal(null)
             return true
         }
+
+
         if(id==R.id.salir){
-
-          finish()
-            return true;
-
+            return true
         }
 
         return super.onOptionsItemSelected(item)

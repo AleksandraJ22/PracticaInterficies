@@ -2,21 +2,70 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
-    android:layout_height="279dp"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
 
-    android:layout_margin="40dp"
-android:orientation="horizontal"
+
+    android:layout_margin="10dp"
+
+    android:orientation="vertical"
+    android:padding="5dp"
+
 
     android:scaleType="center"
     app:cardElevation="6dp"
+
     >
 
     <ImageView
-        android:id="@+id/imageView"
+        android:background="@color/white"
+        android:id="@+id/imageViewFondo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
 
         tools:srcCompat="@drawable/disco" />
+        <!--android:padding="50dp"-->
+
+
+    <ImageView
+        android:id="@+id/imageViewPersonaje"
+        android:layout_width="75dp"
+        android:layout_height="110dp"
+        android:layout_gravity="bottom"
+android:layout_marginStart="200dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/transparente"
+        android:scaleType="fitXY"
+
+        tools:srcCompat="@drawable/personaje1" />
+
+
+    <ImageView
+        android:id="@+id/imageViewBurbuja"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+android:layout_gravity="bottom"
+        android:layout_marginBottom="95dp"
+        android:layout_marginLeft="250dp"
+        android:background="@color/transparente"
+        android:scaleType="fitXY"
+        android:src="@drawable/burbuja_pensamiento" />
+
+    <TextView
+            android:id="@+id/textViewBurbuja"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#00FFFFFF"
+
+            android:gravity="center_horizontal"
+
+
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
 </androidx.cardview.widget.CardView>

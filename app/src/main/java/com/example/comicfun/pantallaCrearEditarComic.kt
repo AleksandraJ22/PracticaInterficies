@@ -67,7 +67,7 @@ fun verPerfil(view: View?){
         }
         if(id==R.id.salir){
 
-
+finish()
             return true;
 
         }

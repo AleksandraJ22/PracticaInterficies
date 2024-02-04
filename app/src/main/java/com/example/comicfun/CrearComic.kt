@@ -1,5 +1,6 @@
 package com.example.comicfun
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -19,26 +20,31 @@ class CrearComic : AppCompatActivity() {
     private  lateinit var panelAdapter: AdapterPanelComic
     private  lateinit var lista_panel: ArrayList<panelComic>
 
-   // val botonAgregar: Button = findViewById(R.id.btn_agregar_panel)
+    private lateinit var botonAgregar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_crear_comic)
+        botonAgregar = findViewById(R.id.btn_agregar_panel)
+        botonAgregar.setOnClickListener {
+            if (lista_panel.size < 5) {
+                //val nuevoPanel = panelComic()
+                lista_panel.add(panelComic())
+                panelAdapter.notifyItemInserted(lista_panel.size - 1)
+                recyclerView.scrollToPosition(lista_panel.size - 1)
+            } else {
+
+                Toast.makeText(this, "El limite maximo de paneles es 5!", Toast.LENGTH_SHORT).show()
+            }
+        }
 
        init()
-       """ botonAgregar.setOnClickListener {
-           if (lista_panel.size < 5) {
-               val nuevoPanel = panelComic(R.drawable.disco)
-               lista_panel.add(nuevoPanel)
-               panelAdapter.notifyItemInserted(lista_panel.size - 1)
-               recyclerView.scrollToPosition(lista_panel.size - 1)
-           } else {
 
-               Toast.makeText(this, "El limite maximo de paneles es 5!", Toast.LENGTH_SHORT).show()
-           }
-       }"""
 
     }
+
+
+
     private fun init(){
 
         recyclerView = findViewById(R.id.recyclerView2)
@@ -56,9 +62,11 @@ class CrearComic : AppCompatActivity() {
     private fun addDataToList(){
 
 
-        lista_panel.add(panelComic(R.drawable.disco, R.drawable.burbuja_dialogo1,R.drawable.personaje1))
-     //   panelAdapter.notifyItemInserted(lista_panel.size - 1)
-      //  recyclerView.scrollToPosition(lista_panel.size - 1)
+        lista_panel.add(panelComic(R.drawable.disco, R.drawable.burbuja_pensamiento,R.drawable.personaje1))
+
+
+    //  panelAdapter.notifyItemInserted(lista_panel.size - 1)
+    //   recyclerView.scrollToPosition(lista_panel.size - 1)
 
     }
     fun regresarAtras(view: View){

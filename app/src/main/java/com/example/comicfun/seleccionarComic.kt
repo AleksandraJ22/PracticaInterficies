@@ -5,14 +5,51 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class seleccionarComic : AppCompatActivity() {
+
+    private lateinit var rv: RecyclerView
+
+    private  lateinit var adapter: AdapterSeleccionarComic
+    private lateinit var listaDeComics: ArrayList<comic>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.seleccionar_comic)
+
+
+        init()
     }
 
 
+    private fun init(){
+
+        rv = findViewById(R.id.recyclerView)
+        rv.setHasFixedSize(true)
+        rv.layoutManager= LinearLayoutManager(this, RecyclerView.VERTICAL,false)
+        listaDeComics = ArrayList()
+
+
+        addDataToList()
+
+        adapter=AdapterSeleccionarComic(listaDeComics)
+        rv.adapter = adapter
+    }
+    private fun addDataToList(){
+
+
+        listaDeComics.add(comic(1, "comic1", ArrayList()))
+        listaDeComics.add(comic(2,"comic2",ArrayList()))
+        listaDeComics.add(comic(3,"comic3",ArrayList()))
+        listaDeComics.add(comic(4, "comic4",ArrayList()))
+
+        listaDeComics.add(comic(5, "comic5",ArrayList()))
+        listaDeComics.add(comic(6,"comic6",ArrayList()))
+        listaDeComics.add(comic(7,"comic7",ArrayList()))
+        listaDeComics.add(comic(8, "comic8",ArrayList()))
+
+    }
     fun regresarAtras(view: View){
 
 

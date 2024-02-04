@@ -5,6 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import com.example.comicfun.R
 
 
@@ -19,23 +20,44 @@ import com.example.comicfun.R
         override fun onBindViewHolder(holder: PanelViewHolder, position: Int) {
             val panel = objetosPanel[position]
 
+            if (panel.imageFondo != null) {
+                holder.imageViewFondo.setImageResource(panel.imageFondo)
+            }
 
-            holder.PanelImageView.setImageResource(panel.imageFondo)
+           if (panel.burbuja != null)
+            {
 
-          """ if (panel.burbuja != null) {
-                holder.PanelImageView.setImageResource(panel.burbuja)
-                holder.PanelImageView.visibility = View.VISIBLE
+                holder.imageViewBurbuja.setImageResource(panel.burbuja)
+            }
+
+
+            if (panel.personaje != null)
+            {
+                holder.imageViewPersonaje.setImageResource(panel.personaje)
+            }
+
+          /*  if (panel.textoBurbuja != null) {
+                holder.textViewBurbuja.text = panel.textoBurbuja
+
+                holder.textViewBurbuja.setOnClickListener {
+
+                }
+            }*/
+
+        /*   if (panel.burbuja != null) {
+                holder.imageViewBurbuja.setImageResource(panel.burbuja)
+                holder.imageViewBurbuja.visibility = View.VISIBLE
             } else {
-                holder.PanelImageView.visibility = View.GONE
+                holder.imageViewBurbuja.visibility = View.GONE
             }
 
 
             if (panel.personaje != null) {
-                holder.PanelImageView.setImageResource(panel.personaje)
-                holder.PanelImageView.visibility = View.VISIBLE
+                holder.imageViewPersonaje.setImageResource(panel.personaje)
+                holder.imageViewPersonaje.visibility = View.VISIBLE
             } else {
-                holder.PanelImageView.visibility = View.GONE
-            }"""
+                holder.imageViewPersonaje.visibility = View.GONE
+            }**/
         }
 
         override fun getItemCount(): Int {
@@ -43,7 +65,12 @@ import com.example.comicfun.R
         }
 
         class PanelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            val PanelImageView: ImageView = itemView.findViewById(R.id.imageView)
+            val imageViewFondo: ImageView = itemView.findViewById(R.id.imageViewFondo)
+            val imageViewBurbuja: ImageView = itemView.findViewById(R.id.imageViewBurbuja)
+          //  val textViewBurbuja: TextView = itemView.findViewById(R.id.textViewBurbuja)
+            val imageViewPersonaje: ImageView = itemView.findViewById(R.id.imageViewPersonaje)
 
+       // val textNombreComic: TextView = itemView.findViewById(R.id.comic1)
         }
     }
+

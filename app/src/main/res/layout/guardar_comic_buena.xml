@@ -48,51 +48,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-
-        style="@style/pop_up_link_enviado"
-        android:layout_marginTop="196dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="153dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="68dp"
-            android:background="@color/transparente"
-            android:gravity="center"
-            android:text="@string/ahora"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button22"
-            android:layout_width="27dp"
-            android:layout_height="26dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            android:background="@drawable/boton_cruz"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView30"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/transparente"
-            android:gravity="center|center_horizontal|center_vertical"
-            android:onClick="irAInicio"
-            android:text="@string/volver_inicio"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView24" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="47dp"
@@ -101,6 +56,20 @@
         app:layout_constraintBottom_toBottomOf="@+id/editText2"
         app:srcCompat="@drawable/download_btn"
         tools:layout_editor_absoluteX="327dp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:background="@color/transparente"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:onClick="irAInicio"
+        android:text="@string/volver_inicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

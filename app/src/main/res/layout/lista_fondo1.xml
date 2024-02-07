@@ -96,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
     <Button
-        android:id="@+id/button29"
+        android:id="@+id/buttonOK"
         style="@style/main_boton"
         android:layout_marginStart="72dp"
         android:layout_marginBottom="48dp"
@@ -113,10 +113,10 @@
         style="@style/main_boton"
         android:text="@string/inicio"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button29"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonOK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.405"
-        app:layout_constraintStart_toEndOf="@+id/button29"
+        app:layout_constraintStart_toEndOf="@+id/buttonOK"
         app:layout_constraintTop_toBottomOf="@+id/recycleView3"
         app:layout_constraintVertical_bias="1.0" />
 

@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterPanelComic
@@ -20,37 +21,27 @@ class CrearComic : AppCompatActivity() {
     private  lateinit var panelAdapter: AdapterPanelComic
     private  lateinit var lista_panel: ArrayList<panelComic>
 
+    val listaPaneles: List<CardView> = listOf(lista_panel)
+
     private lateinit var botonAgregar: Button
+
+    private var panelSeleccionadoId: Int?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_crear_comic)
-        botonAgregar = findViewById(R.id.btn_agregar_panel)
-        botonAgregar.setOnClickListener {
-            if (lista_panel.size < 5) {
-                //val nuevoPanel = panelComic()
-                lista_panel.add(panelComic())
-                panelAdapter.notifyItemInserted(lista_panel.size - 1)
-                recyclerView.scrollToPosition(lista_panel.size - 1)
-            } else {
-
-                Toast.makeText(this, "El limite maximo de paneles es 5!", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-       init()
+        init()
+        controlarPaneles()
 
 
     }
-
-
-
     private fun init(){
 
         recyclerView = findViewById(R.id.recyclerView2)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager= LinearLayoutManager(this, RecyclerView.HORIZONTAL,false)
         lista_panel = ArrayList()
+
 
 
         addDataToList()
@@ -62,11 +53,41 @@ class CrearComic : AppCompatActivity() {
     private fun addDataToList(){
 
 
-        lista_panel.add(panelComic(R.drawable.disco, R.drawable.burbuja_pensamiento,R.drawable.personaje1))
+
+lista_panel.add(panelComic(1))
 
 
-    //  panelAdapter.notifyItemInserted(lista_panel.size - 1)
-    //   recyclerView.scrollToPosition(lista_panel.size - 1)
+        //lista_panel.add(panelComic(R.drawable.disco, R.drawable.burbuja_pensamiento,R.drawable.personaje1))
+
+
+
+    }
+
+    private fun controlarPaneles(){
+        var cont: Int=0
+
+        botonAgregar = findViewById(R.id.btn_agregar_panel)
+        botonAgregar.setOnClickListener {
+            if (lista_panel.size < 5) {
+
+                //addDataToList()
+                //val nuevoPanel = panelComic()
+               lista_panel.add(panelComic(1))
+                panelAdapter.notifyItemInserted(lista_panel.size - 1)
+                recyclerView.scrollToPosition(lista_panel.size - 1)
+            } else {
+
+                Toast.makeText(this, "El limite maximo de paneles es 5!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
+    fun ObtenerIdpanelSeleccionado() {
+
+
+        panelSeleccionadoId
+
 
     }
     fun regresarAtras(view: View){
@@ -85,6 +106,8 @@ class CrearComic : AppCompatActivity() {
 
 
     fun verFondos(view:View){
+
+
 
 
         val intent= Intent(this, lista_fondo::class.java).apply{}

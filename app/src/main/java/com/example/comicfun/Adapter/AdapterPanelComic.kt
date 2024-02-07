@@ -23,11 +23,6 @@ class AdapterPanelComic(private val objetosPanel: ArrayList<panelComic>) : Recyc
                 holder.imageViewFondo.setImageResource(panel.imageFondo)
             }
 
-           if (panel.burbuja != null)
-            {
-
-                holder.imageViewBurbuja.setImageResource(panel.burbuja)
-            }
 
 
             if (panel.personaje != null)
@@ -43,7 +38,7 @@ class AdapterPanelComic(private val objetosPanel: ArrayList<panelComic>) : Recyc
                 }
             }*/
 
-        /*   if (panel.burbuja != null) {
+          if (panel.burbuja != null) {
                 holder.imageViewBurbuja.setImageResource(panel.burbuja)
                 holder.imageViewBurbuja.visibility = View.VISIBLE
             } else {
@@ -56,7 +51,15 @@ class AdapterPanelComic(private val objetosPanel: ArrayList<panelComic>) : Recyc
                 holder.imageViewPersonaje.visibility = View.VISIBLE
             } else {
                 holder.imageViewPersonaje.visibility = View.GONE
-            }**/
+            }
+            if (panel.imageFondo != null) {
+                holder.imageViewFondo.setImageResource(panel.imageFondo)
+                holder.imageViewFondo.visibility = View.VISIBLE
+            } else {
+                holder.imageViewPersonaje.visibility = View.GONE
+            }
+
+
         }
 
         override fun getItemCount(): Int {

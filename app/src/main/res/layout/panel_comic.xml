@@ -49,17 +49,19 @@ android:layout_marginStart="200dp"
 android:layout_gravity="bottom"
         android:layout_marginBottom="95dp"
         android:layout_marginLeft="250dp"
-        android:background="@color/transparente"
+
+        android:backgroundTint="@color/transparente"
         android:scaleType="fitXY"
         android:src="@drawable/burbuja_pensamiento" />
 
+    <!--
     <TextView
             android:id="@+id/textViewBurbuja"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="#00FFFFFF"
+
 
             android:gravity="center_horizontal"
 
@@ -67,5 +69,5 @@ android:layout_gravity="bottom"
             android:text=""
             android:textColor="@color/black"
             android:textSize="16dp" />
-
+-->
 </androidx.cardview.widget.CardView>

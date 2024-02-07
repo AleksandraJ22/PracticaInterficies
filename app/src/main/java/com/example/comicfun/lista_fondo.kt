@@ -3,16 +3,28 @@ package com.example.comicfun
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterFondo1
 import com.example.comicfun.data.fondo
+import com.example.comicfun.data.panelComic
+
 
 class lista_fondo : AppCompatActivity() {
+    interface FondoSeleccionadoListener {
+        fun onFondoSeleccionado(panelSeleccionadoId: Int, fondoElegido: fondo)
+    }
 
+    private var fondoSeleccionadoListener: FondoSeleccionadoListener? = null
 
+    fun setFondoSeleccionadoListener(listener: FondoSeleccionadoListener) {
+        fondoSeleccionadoListener = listener
+    }
     private lateinit var recyclerView: RecyclerView
 
     private  lateinit var fondo1Adapter: AdapterFondo1
@@ -20,15 +32,31 @@ private lateinit var fondo1List: ArrayList<fondo>
 
     private lateinit var fondo2List: ArrayList<fondo>
     private lateinit var fondo3List: ArrayList<fondo>
+private lateinit var btn_OK_fondo: Button
+
+//private  var fondo_elegido: ImageView?=null
+    private var fondoElegido: fondo?=null
+  //  private lateinit var panelComicList: ArrayList<panelComic>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_fondo1)
+        val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
+        val fondoSeleccionadoId = intent.getIntExtra("fondo_seleccionado_id", -1)
+        btn_OK_fondo = findViewById(R.id.buttonOK)
 
         init()
         init2()
         init3()
+        btn_OK_fondo = findViewById(R.id.buttonOK)
+        btn_OK_fondo.setOnClickListener {
+            OkFondo(it)
+        }
+
+
+
+
 
        /* recyclerView = findViewById(R.id.recycleView)
         adapter = AdapterFondo1()
@@ -53,7 +81,13 @@ private lateinit var fondo1List: ArrayList<fondo>
         addDataToList()
 
         fondo1Adapter= AdapterFondo1(fondo1List)
+        fondo1Adapter.setOnItemClickListener { imageView ->
+            fondoElegido = imageView.tag as fondo
+        }
         recyclerView.adapter = fondo1Adapter
+
+
+
     }
 
 
@@ -89,30 +123,27 @@ private lateinit var fondo1List: ArrayList<fondo>
     private fun addDataToList3(){
 
 
-        fondo3List.add(fondo(R.drawable.clima_lluvia2))
-        fondo3List.add(fondo(R.drawable.balcon))
-        fondo3List.add(fondo(R.drawable.tornado))
-        fondo3List.add(fondo(R.drawable.clima_lluvia))
+        fondo3List.add(fondo(1,null,R.drawable.clima_lluvia2))
+        fondo3List.add(fondo(2,null,R.drawable.balcon))
+        fondo3List.add(fondo(3,null,R.drawable.tornado))
+        fondo3List.add(fondo(4,null ,R.drawable.clima_lluvia))
 
     }
     private fun addDataToList2(){
 
 
-        fondo2List.add(fondo(R.drawable.carretera))
-        fondo2List.add(fondo(R.drawable.bosque))
-        fondo2List.add(fondo(R.drawable.disco))
-        fondo2List.add(fondo(R.drawable.baile))
+        fondo2List.add(fondo(1,null,R.drawable.carretera))
+        fondo2List.add(fondo(2,null,R.drawable.bosque))
+        fondo2List.add(fondo(3,null,R.drawable.disco))
+        fondo2List.add(fondo(4,null,R.drawable.baile))
 
     }
     private fun addDataToList(){
         //los fondos de color solido y de patron
 
-        fondo1List.add(fondo(R.drawable.patron))
-        fondo1List.add(fondo(R.drawable.patron2))
-        fondo1List.add(fondo(R.drawable.color_azul))
-
-
-
+        fondo1List.add(fondo(1,null,R.drawable.patron))
+        fondo1List.add(fondo(2,null,R.drawable.patron2))
+        fondo1List.add(fondo(3,null, R.drawable.color_azul))
 
     }
 
@@ -158,22 +189,30 @@ return imagesList
 
 */
 
-    fun OkFondo(view: View){
 
 
 
-        val intent= Intent(this, CrearComic::class.java).apply{}
-        startActivity(intent);
+    fun OkFondo(view: View) {
+
+        fondoElegido?.let { fondo ->
+            val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
+            fondoSeleccionadoListener?.onFondoSeleccionado(panelSeleccionadoId, fondo)
+        }
 
 
     }
 
 
+    private fun obtenerIndicePanelSeleccionado(): Int {
+
+        val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
+        return panelSeleccionadoId
+    }
     fun volverSinSeleccionarFondo(view: View){
 
-        val intent= Intent(this, CrearComic::class.java).apply{}
-        startActivity(intent);
 
+            val intent= Intent(this, CrearComic::class.java).apply{}
+            startActivity(intent);
 
     }
        /* fun onOkButtonClick() {

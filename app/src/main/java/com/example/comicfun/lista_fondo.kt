@@ -14,9 +14,17 @@ import com.example.comicfun.Adapter.AdapterFondo1
 import com.example.comicfun.data.fondo
 import com.example.comicfun.data.panelComic
 
+
 class lista_fondo : AppCompatActivity() {
+    interface FondoSeleccionadoListener {
+        fun onFondoSeleccionado(panelSeleccionadoId: Int, fondoElegido: fondo)
+    }
 
+    private var fondoSeleccionadoListener: FondoSeleccionadoListener? = null
 
+    fun setFondoSeleccionadoListener(listener: FondoSeleccionadoListener) {
+        fondoSeleccionadoListener = listener
+    }
     private lateinit var recyclerView: RecyclerView
 
     private  lateinit var fondo1Adapter: AdapterFondo1
@@ -27,12 +35,15 @@ private lateinit var fondo1List: ArrayList<fondo>
 private lateinit var btn_OK_fondo: Button
 
 //private  var fondo_elegido: ImageView?=null
-    private var fondoElegidoId: Int? = null
-    private lateinit var panelComicList: ArrayList<panelComic>
+    private var fondoElegido: fondo?=null
+  //  private lateinit var panelComicList: ArrayList<panelComic>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_fondo1)
+        val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
+        val fondoSeleccionadoId = intent.getIntExtra("fondo_seleccionado_id", -1)
         btn_OK_fondo = findViewById(R.id.buttonOK)
 
         init()
@@ -42,6 +53,8 @@ private lateinit var btn_OK_fondo: Button
         btn_OK_fondo.setOnClickListener {
             OkFondo(it)
         }
+
+
 
 
 
@@ -69,14 +82,11 @@ private lateinit var btn_OK_fondo: Button
 
         fondo1Adapter= AdapterFondo1(fondo1List)
         fondo1Adapter.setOnItemClickListener { imageView ->
-            fondoElegidoId = imageView.tag as Int
+            fondoElegido = imageView.tag as fondo
         }
         recyclerView.adapter = fondo1Adapter
 
 
-        panelComicList = ArrayList()
-        panelComicList.add(panelComic(1))
-        panelComicList.add(panelComic(2))
 
     }
 
@@ -180,37 +190,29 @@ return imagesList
 */
 
 
-    fun seleccionarUnFondo(){
 
-
-
-    }
 
     fun OkFondo(view: View) {
-        if (fondoElegidoId != null) {
 
-            val panelIndex = obtenerIndicePanelSeleccionado()
-            if (panelIndex != -1) {
-                panelComicList[panelIndex] = panelComic(panelComicList[panelIndex].id, fondoElegidoId)
-
-            }
+        fondoElegido?.let { fondo ->
+            val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
+            fondoSeleccionadoListener?.onFondoSeleccionado(panelSeleccionadoId, fondo)
         }
-        startActivity(Intent(this, CrearComic::class.java))
+
+
     }
+
+
     private fun obtenerIndicePanelSeleccionado(): Int {
-        // Aquí deberías implementar la lógica para determinar qué panel de cómic se ha seleccionado
-        // por ejemplo, si el usuario hace clic en un panel específico antes de seleccionar un fondo
-        // Puedes devolver el índice del panel seleccionado, o -1 si no se seleccionó ningún panel
-        return -1
+
+        val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
+        return panelSeleccionadoId
     }
     fun volverSinSeleccionarFondo(view: View){
 
 
             val intent= Intent(this, CrearComic::class.java).apply{}
             startActivity(intent);
-
-
-
 
     }
        /* fun onOkButtonClick() {

@@ -14,7 +14,7 @@ import com.example.comicfun.data.fondo
 import com.example.comicfun.data.panelComic
 
 
-class CrearComic : AppCompatActivity(), lista_fondo.FondoSeleccionadoListener {
+class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*/ {
 
 
     private lateinit var recyclerView: RecyclerView
@@ -32,10 +32,8 @@ class CrearComic : AppCompatActivity(), lista_fondo.FondoSeleccionadoListener {
         setContentView(R.layout.pantalla_crear_comic)
         init()
         controlarPaneles()
-        val listaFondo = lista_fondo()
-        listaFondo.setFondoSeleccionadoListener(this)
-
-
+        //val listaFondo = lista_fondo()
+        //listaFondo.setFondoSeleccionadoListener(this)
     }
     private fun init(){
 
@@ -53,28 +51,21 @@ class CrearComic : AppCompatActivity(), lista_fondo.FondoSeleccionadoListener {
     }
 
     private fun addDataToList(){
+            val nuevoId = lista_panel.size
+            lista_panel.add(panelComic(nuevoId + 1))
 
-
-
-lista_panel.add(panelComic(1))
-
-
-        //lista_panel.add(panelComic(R.drawable.disco, R.drawable.burbuja_pensamiento,R.drawable.personaje1))
-
-
-
+            //panelAdapter.notifyItemInserted(lista_panel.size - 1)
     }
 
     private fun controlarPaneles(){
-        var cont: Int=0
 
         botonAgregar = findViewById(R.id.btn_agregar_panel)
         botonAgregar.setOnClickListener {
-            if (lista_panel.size < 5) {
 
-                //addDataToList()
-                //val nuevoPanel = panelComic()
-               lista_panel.add(panelComic(1))
+            if (lista_panel.size < 5) {
+               addDataToList()
+                val ultimoPanel = lista_panel[lista_panel.size - 1]
+                Toast.makeText(this, "El panel creado tiene id ${ultimoPanel.id}", Toast.LENGTH_SHORT).show()
                 panelAdapter.notifyItemInserted(lista_panel.size - 1)
                 recyclerView.scrollToPosition(lista_panel.size - 1)
             } else {
@@ -100,20 +91,14 @@ lista_panel.add(panelComic(1))
         startActivity(intent);
     }
 
-    fun verFondos(panelId: Int){
+    fun verFondos(panelId: Int?=null){
         val intent= Intent(this, lista_fondo::class.java).apply{}
-        intent.putExtra("panel_seleccionado_id", panelId)
+        if(panelId != null){
+            intent.putExtra("panel_seleccionado_id", panelId)
+        }
+
         startActivity(intent);
     }
-   /* fun verFondos(view:View){
-
-
-
-
-        val intent= Intent(this, lista_fondo::class.java).apply{}
-        intent.putExtra("panel_seleccionado_id", panelId)
-        startActivity(intent);
-    }*/
 
 
     fun verBurbujas(view:View){
@@ -130,18 +115,15 @@ fun guardarComic(view:View){
     startActivity(intent);
 }
 
-    override fun onFondoSeleccionado(panelId: Int, fondoElegido: fondo) {
-
+    /*override fun onFondoSeleccionado(panelId: Int, fondoElegido: fondo) {
+        val imagenFondo = fondoElegido.imagenFondo
         for (panel in lista_panel) {
             if (panel.id == panelId) {
-                panel.imageFondo = fondoElegido.imagenFondo
-
+                panel.imageFondo = imagenFondo
                 break
             }
         }
-
-
     }
-
+*/
 
 }

@@ -34,7 +34,7 @@ private lateinit var fondo1List: ArrayList<fondo>
     private lateinit var fondo3List: ArrayList<fondo>
 private lateinit var btn_OK_fondo: Button
 
-//private  var fondo_elegido: ImageView?=null
+
     private var fondoElegido: fondo?=null
   //  private lateinit var panelComicList: ArrayList<panelComic>
 
@@ -42,22 +42,23 @@ private lateinit var btn_OK_fondo: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_fondo1)
+
         val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
-        val fondoSeleccionadoId = intent.getIntExtra("fondo_seleccionado_id", -1)
+        if(panelSeleccionadoId != -1){
+
+            Toast.makeText(this, "El panel seleccionado es ${panelSeleccionadoId}",Toast.LENGTH_SHORT).show()
+        }
+
+        // val fondoSeleccionadoId = intent.getIntExtra("fondo_seleccionado_id", -1)
         btn_OK_fondo = findViewById(R.id.buttonOK)
 
         init()
         init2()
         init3()
-        btn_OK_fondo = findViewById(R.id.buttonOK)
+    /*    btn_OK_fondo = findViewById(R.id.buttonOK)
         btn_OK_fondo.setOnClickListener {
             OkFondo(it)
-        }
-
-
-
-
-
+        }*/
        /* recyclerView = findViewById(R.id.recycleView)
         adapter = AdapterFondo1()
 
@@ -69,6 +70,12 @@ private lateinit var btn_OK_fondo: Button
 
     }
 
+    fun obtenerIdPanel(): Int{
+        val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
+
+
+        return panelSeleccionadoId
+    }
 
     private fun init(){
 
@@ -89,9 +96,6 @@ private lateinit var btn_OK_fondo: Button
 
 
     }
-
-
-
 
     private fun init2(){
 
@@ -188,26 +192,31 @@ return imagesList
 
 
 */
-
-
-
-
     fun OkFondo(view: View) {
 
-        fondoElegido?.let { fondo ->
-            val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
-            fondoSeleccionadoListener?.onFondoSeleccionado(panelSeleccionadoId, fondo)
+        val panelSeleccionadoId = obtenerIdPanel()
+        if (panelSeleccionadoId != -1) {
+            fondoElegido?.let { fondo ->
+                fondoSeleccionadoListener?.onFondoSeleccionado(panelSeleccionadoId, fondo)
+            } ?: run {
+                Toast.makeText(this, "Por favor, selecciona un fondo", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            // Manejo cuando no se selecciona ningún panel
+            Toast.makeText(this, "Para elegir un fondo, primero selecciona un panel", Toast.LENGTH_SHORT).show()
         }
 
 
+      /*  fondoElegido?.let { fondo ->
+            val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
+            fondoSeleccionadoListener?.onFondoSeleccionado(panelSeleccionadoId, fondo)
+        }*/
+
+
     }
 
 
-    private fun obtenerIndicePanelSeleccionado(): Int {
 
-        val panelSeleccionadoId = intent.getIntExtra("panel_seleccionado_id", -1)
-        return panelSeleccionadoId
-    }
     fun volverSinSeleccionarFondo(view: View){
 
 

@@ -40,10 +40,10 @@ class personajes : AppCompatActivity() {
     private fun addDataToList(){
 
 
-        personajes.add(fondo(R.drawable.personaje1))
-        personajes.add(fondo(R.drawable.personaje2))
-        personajes.add(fondo(R.drawable.perssonaje3))
-        personajes.add(fondo(R.drawable.personaje4))
+        personajes.add(fondo(1,null,R.drawable.personaje1))
+        personajes.add(fondo(2,null,R.drawable.personaje2))
+        personajes.add(fondo(3,null,R.drawable.perssonaje3))
+        personajes.add(fondo(4,null,R.drawable.personaje4))
 
     }
 

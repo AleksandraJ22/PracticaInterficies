@@ -25,10 +25,21 @@ class AdapterFondo1(private val imagesList : ArrayList<fondo>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: FondoViewHolder, position: Int) {
         val imagen = imagesList[position]
-        holder.fondoImageView.setImageResource(imagen.imagenFondo)
+        holder.fondoImageView.setImageResource(imagen.idFondo)
         holder.itemView.setOnClickListener {
             onItemClickListener?.invoke(holder.fondoImageView)
         }
+
+       /* val fondo = imagesList[position]
+        holder.fondoImageView.setImageResource(fondo.imagenFondo)
+
+        // Asignar el objeto fondo como el tag de la vista imageView
+        holder.fondoImageView.tag = fondo
+
+        // Manejar clics en la vista imageView
+        holder.fondoImageView.setOnClickListener {
+            onItemClickListener?.invoke(fondo)
+        }*/
     }
 
     override fun getItemCount(): Int {

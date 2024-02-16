@@ -19,16 +19,16 @@ class AdapterPanelComic(private val objetosPanel: ArrayList<panelComic>) : Recyc
         override fun onBindViewHolder(holder: PanelViewHolder, position: Int) {
             val panel = objetosPanel[position]
 
-            if (panel.imageFondo != null) {
+          /*  if (panel.imageFondo != null) {
                 holder.imageViewFondo.setImageResource(panel.imageFondo)
             }
+*/
 
 
-
-            if (panel.personaje != null)
+          /*  if (panel.personaje != null)
             {
                 holder.imageViewPersonaje.setImageResource(panel.personaje)
-            }
+            }*/
 
           /*  if (panel.textoBurbuja != null) {
                 holder.textViewBurbuja.text = panel.textoBurbuja
@@ -39,7 +39,7 @@ class AdapterPanelComic(private val objetosPanel: ArrayList<panelComic>) : Recyc
             }*/
 
           if (panel.burbuja != null) {
-                holder.imageViewBurbuja.setImageResource(panel.burbuja)
+                holder.imageViewBurbuja.setImageResource(panel.burbuja!!)
                 holder.imageViewBurbuja.visibility = View.VISIBLE
             } else {
                 holder.imageViewBurbuja.visibility = View.GONE
@@ -47,13 +47,13 @@ class AdapterPanelComic(private val objetosPanel: ArrayList<panelComic>) : Recyc
 
 
             if (panel.personaje != null) {
-                holder.imageViewPersonaje.setImageResource(panel.personaje)
+                holder.imageViewPersonaje.setImageResource(panel.personaje!!)
                 holder.imageViewPersonaje.visibility = View.VISIBLE
             } else {
                 holder.imageViewPersonaje.visibility = View.GONE
             }
             if (panel.imageFondo != null) {
-                holder.imageViewFondo.setImageResource(panel.imageFondo)
+                holder.imageViewFondo.setImageResource(panel.imageFondo!!)
                 holder.imageViewFondo.visibility = View.VISIBLE
             } else {
                 holder.imageViewPersonaje.visibility = View.GONE

@@ -16,6 +16,8 @@
 <string name="user_name">Nombre de usuario</string>
     <string name="num_comics">Tus comics: </string>
 
+    <string name="crear_usuario">Crear usuario</string>
+
     <string name="nombre">Nombre</string>
     <string name="Apellido">Apellido</string>
     <string name="correo">Correo</string>

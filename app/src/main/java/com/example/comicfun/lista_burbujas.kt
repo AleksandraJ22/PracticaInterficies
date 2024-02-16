@@ -87,18 +87,18 @@ class lista_burbujas : AppCompatActivity() {
     private fun addDataToList2(){
 
 
-        b_grito.add(fondo(R.drawable.grito))
-        b_grito.add(fondo(R.drawable.grito2))
+        b_grito.add(fondo(1,null,R.drawable.grito))
+        b_grito.add(fondo(2,null,R.drawable.grito2))
 
 
     }
     private fun addDataToList(){
 
-        b_dialogo.add(fondo(R.drawable.burbuja_dialogo))
-        b_dialogo.add(fondo(R.drawable.burbuja_dialogo1))
-        b_dialogo.add(fondo(R.drawable.dialogo3))
-        b_dialogo.add(fondo(R.drawable.dialogo_4))
-        b_dialogo.add(fondo(R.drawable.dialogo5))
+        b_dialogo.add(fondo(1,null,R.drawable.burbuja_dialogo))
+        b_dialogo.add(fondo(2,null,R.drawable.burbuja_dialogo1))
+        b_dialogo.add(fondo(3,null,R.drawable.dialogo3))
+        b_dialogo.add(fondo(4,null,R.drawable.dialogo_4))
+        b_dialogo.add(fondo(5,null,R.drawable.dialogo5))
 
     }
 

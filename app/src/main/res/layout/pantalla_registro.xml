@@ -36,26 +36,27 @@
 
 
             <EditText
+                android:id="@+id/edit_text_nombre"
                 android:layout_width="match_parent"
+
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="50dp"
-                android:gravity="start"
 
-                android:hint="@string/nombre"
-                />
+                android:gravity="start"
+                android:hint="@string/nombre" />
 
 
             <EditText
+                android:id="@+id/apellido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:gravity="start"
-                android:hint="@string/Apellido"
-                />
+                android:hint="@string/Apellido" />
 
 
             <EditText
+                android:id="@+id/gmail_usuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -64,7 +65,7 @@
                />
 
             <EditText
-                android:id="@+id/editTextTextPassword4"
+                android:id="@+id/contraseña1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -74,7 +75,7 @@
 
 
             <EditText
-                android:id="@+id/editTextTextPassword5"
+                android:id="@+id/contraseña2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -83,13 +84,14 @@
                 android:inputType="textPassword" />
 
             <Button
+                android:id="@+id/boton_signUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="100dp"
+
+
                 android:layout_marginTop="50dp"
-
-
                 android:backgroundTint="@color/azul"
                 android:gravity="center"
                 android:text="@string/sign_up" />

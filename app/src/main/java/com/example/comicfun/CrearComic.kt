@@ -91,7 +91,7 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
         startActivity(intent);
     }
 
-    fun verFondos(panelId: Int?=null){
+  /*  fun verFondos(panelId: Int?=null){
         val intent= Intent(this, lista_fondo::class.java).apply{}
         if(panelId != null){
             intent.putExtra("panel_seleccionado_id", panelId)
@@ -99,7 +99,12 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
 
         startActivity(intent);
     }
+*/
+    fun verFondos(view:View){
+        val intent= Intent(this, lista_fondo::class.java).apply{}
 
+        startActivity(intent);
+    }
 
     fun verBurbujas(view:View){
 

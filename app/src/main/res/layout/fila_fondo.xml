@@ -6,13 +6,16 @@
     android:layout_height="100dp"
 android:layout_margin="10dp"
 
+
     android:orientation="vertical"
     android:padding="5dp"
 
 
     android:scaleType="center"
+    android:background="@drawable/fondo_seleccionado"
+
     app:cardElevation="6dp">
-    
+
 
     <ImageView
         android:id="@+id/ImageView"
@@ -20,7 +23,9 @@ android:layout_margin="10dp"
         android:layout_height="match_parent"
 
         android:scaleType="fitXY"
-        android:src="@drawable/color_azul"/>
+        android:src="@drawable/color_azul"
+        android:clickable="true"
+        android:focusable="true"/>
 
 
 </androidx.cardview.widget.CardView>

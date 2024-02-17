@@ -26,9 +26,9 @@ class AdapterFondo1(private val imagesList : ArrayList<fondo>) : RecyclerView.Ad
     override fun onBindViewHolder(holder: FondoViewHolder, position: Int) {
         val imagen = imagesList[position]
         holder.fondoImageView.setImageResource(imagen.idFondo)
-        holder.itemView.setOnClickListener {
+       /* holder.itemView.setOnClickListener {
             onItemClickListener?.invoke(holder.fondoImageView)
-        }
+        }*/
 
        /* val fondo = imagesList[position]
         holder.fondoImageView.setImageResource(fondo.imagenFondo)

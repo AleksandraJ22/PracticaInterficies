@@ -8,6 +8,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.example.comicfun.R
 import com.example.comicfun.data.comic
 
@@ -44,6 +45,17 @@ class AdapterSeleccionarComic(private val listaComics : ArrayList<comic>) : Recy
 
 
         val encontrarComic: TextView = itemView.findViewById(R.id.comic1)
+
+
+        init {
+            itemView.setOnClickListener{
+
+
+                v: View -> val nombre: Int = adapterPosition
+                Toast.makeText(itemView.context, "You clicked on item # $nombre",
+                Toast.LENGTH_SHORT).show();
+            }
+        }
 
     }
 

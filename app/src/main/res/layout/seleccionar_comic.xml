@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:background="@color/transparente"
+        android:fontFamily="@font/balsamiqsansregular"
         android:gravity="center"
         android:text="@string/seleccionar_comic"
         android:textSize="20dp"

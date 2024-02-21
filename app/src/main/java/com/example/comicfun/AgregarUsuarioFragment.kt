@@ -45,6 +45,7 @@ class AgregarUsuarioFragment: Fragment() {
             bd.close()
 
 
+
         }
         return viewRoot
     }

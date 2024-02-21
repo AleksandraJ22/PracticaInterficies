@@ -8,7 +8,6 @@
     tools:context=".AgregarUsuarioFragment"
 
 
-
     >
 
 
@@ -16,9 +15,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="50dp"
-       >
+
+
+
+        >
 
         <LinearLayout
+
+
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="0dp"
@@ -32,6 +37,7 @@
                 android:fontFamily="@font/balsamiqsansregular"
                 android:gravity="center"
                 android:text="@string/crear_usuario"
+
                 android:textSize="30dp" />
 
 
@@ -85,15 +91,11 @@
 
             <Button
                 android:id="@+id/boton_signUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="100dp"
+                style="@style/boton_azul_alternativo"
 
-
+                android:layout_gravity="center"
                 android:layout_marginTop="50dp"
-                android:backgroundTint="@color/azul"
-                android:gravity="center"
+                android:fontFamily="@font/oxygenbold"
                 android:text="@string/sign_up" />
 
 

@@ -3,10 +3,11 @@ package com.example.comicfun
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-
+/*
 
 class BaseDatosApp(context: Context?, name: String?, factory: SQLiteDatabase.CursorFactory?, version:Int)
     : SQLiteOpenHelper(context, name, factory, version){
+
 
     companion object {
         private const val DATABASE_VERSION = 1
@@ -38,4 +39,4 @@ class BaseDatosApp(context: Context?, name: String?, factory: SQLiteDatabase.Cur
     }
 
 
-}
+}*/

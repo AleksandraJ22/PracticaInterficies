@@ -1,5 +1,7 @@
 package com.example.comicfun
 
+import com.example.comicfun.data.comic
+
 class Usuarios {
 
 
@@ -9,8 +11,10 @@ class Usuarios {
     var PASSWORD : String = ""
 
     var GMAIL: String = ""
+    var historialComics: MutableList<comic> = mutableListOf()
 
-/*
+
+    /*
 
     fun setNombre(nombre: String){
         this.NOMBRE=nombre
@@ -36,13 +40,12 @@ fun getApellido(): String{
     }
 
 */
-    constructor(NOMBRE: String, APELLIDO: String, PASSWORD: String, GMAIL: String) {
-
-
+    constructor(NOMBRE: String, APELLIDO: String, PASSWORD: String, GMAIL: String, historialComics: MutableList<comic>) {
 
         this.NOMBRE=NOMBRE
         this.APELLIDO = APELLIDO
         this.PASSWORD= PASSWORD
         this.GMAIL=GMAIL
+    this.historialComics=historialComics
     }
 }

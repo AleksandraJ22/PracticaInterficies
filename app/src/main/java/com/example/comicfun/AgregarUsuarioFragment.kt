@@ -9,7 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.annotation.ContentView
 import androidx.fragment.app.Fragment
-
+/*
 class AgregarUsuarioFragment: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,4 +50,4 @@ class AgregarUsuarioFragment: Fragment() {
         return viewRoot
     }
 
-}
+}*/

@@ -53,7 +53,7 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_NOMBRE + " VARCHAR(256), " +
                 COLUMN_APELLIDO + " VARCHAR(256), " +
-                COLUMN_GMAIL + " VARCHAR(256), " +
+                COLUMN_GMAIL + " VARCHAR(256) UNIQUE, " +
                 COLUMN_PASSWORD + " VARCHAR(256)" +
                 ")";
 
@@ -106,12 +106,12 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
             val result = db.insert("Usuarios", null, cv)
 
             if (result != -1L) {
-                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+               Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
 
-                Toast.makeText(context, "Usuario insertado - Nombre: ${user.NOMBRE}, Apellido: ${user.APELLIDO}, Correo: ${user.GMAIL}",Toast.LENGTH_SHORT).show()
+               // Toast.makeText(context, "Usuario insertado - Nombre: ${user.NOMBRE}, Apellido: ${user.APELLIDO}, Correo: ${user.GMAIL}",Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
-                Toast.makeText(context, "Error al insertar usuario en la base de datos",Toast.LENGTH_SHORT).show()
+               // Toast.makeText(context, "Error al insertar usuario en la base de datos",Toast.LENGTH_SHORT).show()
             }
         } catch (e: Exception) {
             Toast.makeText(context,"Error al insertar datos en la base de datos: ${e.message}",Toast.LENGTH_SHORT).show()

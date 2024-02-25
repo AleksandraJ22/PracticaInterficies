@@ -13,7 +13,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class registrarse : AppCompatActivity() {
+    val db = DBHandler(this)
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_registro)
         val btn_usuario_registrar : Button = findViewById(R.id.boton_signUp)
@@ -37,9 +39,9 @@ class registrarse : AppCompatActivity() {
                     pass1,
                     edUsuario_correo.text.toString()
                 )
-                val db = DBHandler(this)
 
-                Toast.makeText(this, "Llamada a insertData", Toast.LENGTH_SHORT).show()
+
+               // Toast.makeText(this, "Llamada a insertData", Toast.LENGTH_SHORT).show()
                 db.insertData(user)
 
             } else if (pass1!=pass2){

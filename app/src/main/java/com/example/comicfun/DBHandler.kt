@@ -118,6 +118,16 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
         }
     }
 
+    fun checkearUsuario(email: String, contraseña: String): Boolean {
+        val db = this.readableDatabase
+        val cursor =
+            db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $COLUMN_GMAIL = ? AND $COLUMN_PASSWORD = ?", arrayOf(email))
+        val count = cursor.count
+        cursor.close()
+
+        return count==0
+
+    }
 
 
 }

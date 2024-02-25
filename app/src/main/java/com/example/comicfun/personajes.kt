@@ -22,6 +22,15 @@ class personajes : AppCompatActivity() {
 
 
         init()
+      /*  val nuevoElemento = Elemento(
+            1,
+            1,
+            R.drawable.personaje1,
+            "personaje"
+        )
+        val db = DBHandler(this)
+        db.insertDataTablaPersonajes(nuevoElemento)
+*/
     }
     private fun init(){
 

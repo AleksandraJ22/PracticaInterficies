@@ -41,15 +41,15 @@ class seleccionarComic : AppCompatActivity() {
     private fun addDataToList(){
 
 
-        listaDeComics.add(comic(1, "comic1", ArrayList()))
-        listaDeComics.add(comic(2,"comic2",ArrayList()))
-        listaDeComics.add(comic(3,"comic3",ArrayList()))
-        listaDeComics.add(comic(4, "comic4",ArrayList()))
+        listaDeComics.add(comic(1, "comic1", ArrayList(),0))
+        listaDeComics.add(comic(2,"comic2",ArrayList(),0))
+        listaDeComics.add(comic(3,"comic3",ArrayList(),0))
+        listaDeComics.add(comic(4, "comic4",ArrayList(),0))
 
-        listaDeComics.add(comic(5, "comic5",ArrayList()))
-        listaDeComics.add(comic(6,"comic6",ArrayList()))
-        listaDeComics.add(comic(7,"comic7",ArrayList()))
-        listaDeComics.add(comic(8, "comic8",ArrayList()))
+        listaDeComics.add(comic(5, "comic5",ArrayList(),0))
+        listaDeComics.add(comic(6,"comic6",ArrayList(),0))
+        listaDeComics.add(comic(7,"comic7",ArrayList(),0))
+        listaDeComics.add(comic(8, "comic8",ArrayList(),0))
 
     }
     fun regresarAtras(view: View){

@@ -10,7 +10,8 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterPanelComic
-import com.example.comicfun.data.fondo
+import com.example.comicfun.data.Elemento
+
 import com.example.comicfun.data.panelComic
 
 

@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.comicfun.R
-import com.example.comicfun.data.fondo
+import com.example.comicfun.data.Elemento
 
 
-class AdapterBurbujas(private val imagesList : ArrayList<fondo>) : RecyclerView.Adapter<AdapterBurbujas.BurbujaViewHolder>() {
+class AdapterBurbujas(private val imagesList : ArrayList<Elemento>) : RecyclerView.Adapter<AdapterBurbujas.BurbujaViewHolder>() {
 
     //lateinit var context: Context
 
@@ -26,7 +26,7 @@ class AdapterBurbujas(private val imagesList : ArrayList<fondo>) : RecyclerView.
 
         val imagen = imagesList[position]
 
-        holder.fondoImageView.setImageResource(imagen.imagenFondo)
+        holder.fondoImageView.setImageResource(imagen.imagenElemento)
 
 
     }

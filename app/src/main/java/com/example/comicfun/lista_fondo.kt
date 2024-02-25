@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterFondo
 import com.example.comicfun.Adapter.AdapterFondo1
-import com.example.comicfun.data.fondo
+import com.example.comicfun.data.Elemento
 import com.example.comicfun.data.panelComic
 
 
@@ -22,10 +22,10 @@ class lista_fondo : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
 
     private  lateinit var fondo1Adapter: AdapterFondo
-private lateinit var fondo1List: ArrayList<fondo>
+private lateinit var fondo1List: ArrayList<Elemento>
 
-    private lateinit var fondo2List: ArrayList<fondo>
-    private lateinit var fondo3List: ArrayList<fondo>
+    private lateinit var fondo2List: ArrayList<Elemento>
+    private lateinit var fondo3List: ArrayList<Elemento>
 private lateinit var btn_OK_fondo: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,27 +95,27 @@ private lateinit var btn_OK_fondo: Button
     private fun addDataToList3(){
 
 
-        fondo3List.add(fondo(1,null,R.drawable.clima_lluvia2))
-        fondo3List.add(fondo(2,null,R.drawable.balcon))
-        fondo3List.add(fondo(3,null,R.drawable.tornado))
-        fondo3List.add(fondo(4,null ,R.drawable.clima_lluvia))
+        fondo3List.add(Elemento(1,null,R.drawable.clima_lluvia2, "fondo de panel"))
+        fondo3List.add(Elemento(2,null,R.drawable.balcon, "fondo de panel"))
+        fondo3List.add(Elemento(3,null,R.drawable.tornado, "fondo de panel"))
+        fondo3List.add(Elemento(4,null ,R.drawable.clima_lluvia, "fondo de panel"))
 
     }
     private fun addDataToList2(){
 
 
-        fondo2List.add(fondo(1,null,R.drawable.carretera))
-        fondo2List.add(fondo(2,null,R.drawable.bosque))
-        fondo2List.add(fondo(3,null,R.drawable.disco))
-        fondo2List.add(fondo(4,null,R.drawable.baile))
+        fondo2List.add(Elemento(1,null,R.drawable.carretera, "fondo de panel"))
+        fondo2List.add(Elemento(2,null,R.drawable.bosque, "fondo de panel"))
+        fondo2List.add(Elemento(3,null,R.drawable.disco, "fondo de panel "))
+        fondo2List.add(Elemento(4,null,R.drawable.baile, "fondo de panel"))
 
     }
     private fun addDataToList(){
         //los fondos de color solido y de patron
 
-        fondo1List.add(fondo(1,null,R.drawable.patron))
-        fondo1List.add(fondo(2,null,R.drawable.patron2))
-        fondo1List.add(fondo(3,null, R.drawable.color_azul))
+        fondo1List.add(Elemento(1,null,R.drawable.patron, "fondo de panel"))
+        fondo1List.add(Elemento(2,null,R.drawable.patron2, "fondo de panel"))
+        fondo1List.add(Elemento(3,null, R.drawable.color_azul, "fondo de panel"))
 
     }
 

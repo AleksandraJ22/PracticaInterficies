@@ -7,14 +7,14 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterPersonajes
-import com.example.comicfun.data.fondo
+import com.example.comicfun.data.Elemento
 
 class personajes : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
 
     private  lateinit var personajesAdapter: AdapterPersonajes
-    private lateinit var personajes: ArrayList<fondo>
+    private lateinit var personajes: ArrayList<Elemento>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,10 +40,10 @@ class personajes : AppCompatActivity() {
     private fun addDataToList(){
 
 
-        personajes.add(fondo(1,null,R.drawable.personaje1))
-        personajes.add(fondo(2,null,R.drawable.personaje2))
-        personajes.add(fondo(3,null,R.drawable.perssonaje3))
-        personajes.add(fondo(4,null,R.drawable.personaje4))
+        personajes.add(Elemento(1,null,R.drawable.personaje1, "personaje"))
+        personajes.add(Elemento(2,null,R.drawable.personaje2,"personaje"))
+        personajes.add(Elemento(3,null,R.drawable.perssonaje3,"personaje"))
+        personajes.add(Elemento(4,null,R.drawable.personaje4,"personaje"))
 
     }
 

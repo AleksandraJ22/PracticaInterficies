@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.comicfun.R
-import com.example.comicfun.data.fondo
+import com.example.comicfun.data.Elemento
+//import com.example.comicfun.data.fondo
 
 
-class AdapterFondo1(private val imagesList : ArrayList<fondo>) : RecyclerView.Adapter<AdapterFondo1.FondoViewHolder>() {
+class AdapterFondo1(private val imagesList : ArrayList<Elemento>) : RecyclerView.Adapter<AdapterFondo1.FondoViewHolder>() {
 
     //lateinit var context: Context
     private var onItemClickListener: ((ImageView) -> Unit)? = null
@@ -25,7 +26,7 @@ class AdapterFondo1(private val imagesList : ArrayList<fondo>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: FondoViewHolder, position: Int) {
         val imagen = imagesList[position]
-        holder.fondoImageView.setImageResource(imagen.idFondo)
+        holder.fondoImageView.setImageResource(imagen.idElemento)
        /* holder.itemView.setOnClickListener {
             onItemClickListener?.invoke(holder.fondoImageView)
         }*/

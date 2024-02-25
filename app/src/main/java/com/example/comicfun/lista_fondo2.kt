@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterFondo
 import com.example.comicfun.Adapter.AdapterFondo1
-import com.example.comicfun.data.fondo
+import com.example.comicfun.data.Elemento
 import com.example.comicfun.data.panelComic
 
 
 class lista_fondo2 : AppCompatActivity() {
     interface FondoSeleccionadoListener {
-        fun onFondoSeleccionado(panelSeleccionadoId: Int, fondoElegido: fondo)
+        fun onFondoSeleccionado(panelSeleccionadoId: Int, fondoElegido: Elemento)
     }
 
     private var fondoSeleccionadoListener: FondoSeleccionadoListener? = null
@@ -29,14 +29,14 @@ class lista_fondo2 : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
 
     private  lateinit var fondo1Adapter: AdapterFondo
-    private lateinit var fondo1List: ArrayList<fondo>
+    private lateinit var fondo1List: ArrayList<Elemento>
 
-    private lateinit var fondo2List: ArrayList<fondo>
-    private lateinit var fondo3List: ArrayList<fondo>
+    private lateinit var fondo2List: ArrayList<Elemento>
+    private lateinit var fondo3List: ArrayList<Elemento>
     private lateinit var btn_OK_fondo: Button
 
 
-    private var fondoElegido: fondo?=null
+    private var fondoElegido: Elemento?=null
     //  private lateinit var panelComicList: ArrayList<panelComic>
 
 
@@ -134,27 +134,27 @@ class lista_fondo2 : AppCompatActivity() {
     private fun addDataToList3(){
 
 
-        fondo3List.add(fondo(1,null,R.drawable.clima_lluvia2))
-        fondo3List.add(fondo(2,null,R.drawable.balcon))
-        fondo3List.add(fondo(3,null,R.drawable.tornado))
-        fondo3List.add(fondo(4,null ,R.drawable.clima_lluvia))
+        fondo3List.add(Elemento(1,null,R.drawable.clima_lluvia2, "fondo"))
+        fondo3List.add(Elemento(2,null,R.drawable.balcon, "fondo"))
+        fondo3List.add(Elemento(3,null,R.drawable.tornado,"fondo"))
+        fondo3List.add(Elemento(4,null ,R.drawable.clima_lluvia,"fondo"))
 
     }
     private fun addDataToList2(){
 
 
-        fondo2List.add(fondo(1,null,R.drawable.carretera))
-        fondo2List.add(fondo(2,null,R.drawable.bosque))
-        fondo2List.add(fondo(3,null,R.drawable.disco))
-        fondo2List.add(fondo(4,null,R.drawable.baile))
+        fondo2List.add(Elemento(1,null,R.drawable.carretera,"fondo"))
+        fondo2List.add(Elemento(2,null,R.drawable.bosque,"fondo"))
+        fondo2List.add(Elemento(3,null,R.drawable.disco,"fondo"))
+        fondo2List.add(Elemento(4,null,R.drawable.baile,"fondo"))
 
     }
     private fun addDataToList(){
         //los fondos de color solido y de patron
 
-        fondo1List.add(fondo(1,null,R.drawable.patron))
-        fondo1List.add(fondo(2,null,R.drawable.patron2))
-        fondo1List.add(fondo(3,null, R.drawable.color_azul))
+        fondo1List.add(Elemento(1,null,R.drawable.patron,"fondo"))
+        fondo1List.add(Elemento(2,null,R.drawable.patron2,"fondo"))
+        fondo1List.add(Elemento(3,null, R.drawable.color_azul,"fondo"))
 
     }
 

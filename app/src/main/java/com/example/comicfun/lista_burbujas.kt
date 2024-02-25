@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterBurbujas
-import com.example.comicfun.data.fondo
+import com.example.comicfun.data.Elemento
 
 class lista_burbujas : AppCompatActivity() {
 
@@ -17,11 +17,11 @@ class lista_burbujas : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
 
     private  lateinit var AdapterBurbujas: AdapterBurbujas
-    private lateinit var b_dialogo: ArrayList<fondo>
+    private lateinit var b_dialogo: ArrayList<Elemento>
 
-    private lateinit var b_pensamiento: ArrayList<fondo>
+    private lateinit var b_pensamiento: ArrayList<Elemento>
 
-    private lateinit var b_grito: ArrayList<fondo>
+    private lateinit var b_grito: ArrayList<Elemento>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -87,18 +87,18 @@ class lista_burbujas : AppCompatActivity() {
     private fun addDataToList2(){
 
 
-        b_grito.add(fondo(1,null,R.drawable.grito))
-        b_grito.add(fondo(2,null,R.drawable.grito2))
+        b_grito.add(Elemento(1,null,R.drawable.grito, "burbuja"))
+        b_grito.add(Elemento(2,null,R.drawable.grito2, "burbuja"))
 
 
     }
     private fun addDataToList(){
 
-        b_dialogo.add(fondo(1,null,R.drawable.burbuja_dialogo))
-        b_dialogo.add(fondo(2,null,R.drawable.burbuja_dialogo1))
-        b_dialogo.add(fondo(3,null,R.drawable.dialogo3))
-        b_dialogo.add(fondo(4,null,R.drawable.dialogo_4))
-        b_dialogo.add(fondo(5,null,R.drawable.dialogo5))
+        b_dialogo.add(Elemento(1,null,R.drawable.burbuja_dialogo, "burbuja"))
+        b_dialogo.add(Elemento(2,null,R.drawable.burbuja_dialogo1, "burbuja"))
+        b_dialogo.add(Elemento(3,null,R.drawable.dialogo3, "burbuja"))
+        b_dialogo.add(Elemento(4,null,R.drawable.dialogo_4, "burbuja"))
+        b_dialogo.add(Elemento(5,null,R.drawable.dialogo5, "burbuja"))
 
     }
 

@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.comicfun.R
-import com.example.comicfun.data.fondo
+import com.example.comicfun.data.Elemento
+//import com.example.comicfun.data.fondo
 
 
-class AdapterFondo(private val imagesList : ArrayList<fondo>) : RecyclerView.Adapter<AdapterFondo.ViewHolder>() {
+class AdapterFondo(private val imagesList : ArrayList<Elemento>) : RecyclerView.Adapter<AdapterFondo.ViewHolder>() {
 
 
     interface OnFondoClickListener{
@@ -34,7 +35,7 @@ class AdapterFondo(private val imagesList : ArrayList<fondo>) : RecyclerView.Ada
 
         val imagen = imagesList[position]
 
-        holder.fondoImageView.setImageResource(imagen.imagenFondo)
+        holder.fondoImageView.setImageResource(imagen.imagenElemento)
 holder.fondoImageView.setOnClickListener{
 
     Toast.makeText(holder.itemView.context, "Has seleccionado imagen", Toast.LENGTH_SHORT).show()

@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.comicfun.R
-import com.example.comicfun.data.fondo
+import com.example.comicfun.data.Elemento
 
 
-class AdapterPersonajes(private val imagenes_de_personaje : ArrayList<fondo>) : RecyclerView.Adapter<AdapterPersonajes.ViewHolder>() {
+class AdapterPersonajes(private val imagenes_de_personaje : ArrayList<Elemento>) : RecyclerView.Adapter<AdapterPersonajes.ViewHolder>() {
 
     //lateinit var context: Context
 
@@ -26,7 +26,7 @@ class AdapterPersonajes(private val imagenes_de_personaje : ArrayList<fondo>) : 
 
         val imagen = imagenes_de_personaje[position]
 
-        holder.personajeImageView.setImageResource(imagen.imagenFondo)
+        holder.personajeImageView.setImageResource(imagen.imagenElemento)
 
 
     }

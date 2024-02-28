@@ -40,7 +40,7 @@
     <Button
         android:id="@+id/button3"
         style="@style/boton"
-        android:onClick="signUp"
+        android:onClick="irAPoliticaDePrivacidad"
 
         android:text="@string/sign_up"
         app:cornerRadius="10dp"

@@ -121,8 +121,9 @@ fun guardarComic(view:View){
     startActivity(intent);
 }
 
-    /*override fun onFondoSeleccionado(panelId: Int, fondoElegido: fondo) {
-        val imagenFondo = fondoElegido.imagenFondo
+   fun onFondoSeleccionado(panelId: Int, fondoElegido: Elemento) {
+
+        val imagenFondo =  fondoElegido.imagenElemento
         for (panel in lista_panel) {
             if (panel.id == panelId) {
                 panel.imageFondo = imagenFondo
@@ -130,6 +131,6 @@ fun guardarComic(view:View){
             }
         }
     }
-*/
+
 
 }

@@ -46,7 +46,7 @@ class registrarse : AppCompatActivity() {
 
                 db.insertData(user)
 
-
+                unaVezRegistrado()
 
                // Toast.makeText(this, "Llamada a insertData", Toast.LENGTH_SHORT).show()
 
@@ -76,15 +76,14 @@ startActivity(intent);
 
     }
 
-    fun continuarPoliticaPrivacidad(view: View){
 
-        val intent= Intent(this,politicaPrivacidad::class.java).apply{}
+
+    fun unaVezRegistrado(){
+
+        val intent= Intent(this,pantallaCrearEditarComic::class.java).apply{}
         startActivity(intent);
 
     }
-
-
-
 
 
 

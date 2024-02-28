@@ -41,6 +41,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/aceptar"
         android:textSize="18dp"
+        android:checked="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.098"
@@ -54,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="36dp"
-        android:onClick="aceptar_pdp_iniciar_sesion"
+        android:onClick="signUp"
         android:text="@string/boton_continuar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />

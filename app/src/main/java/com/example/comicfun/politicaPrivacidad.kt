@@ -11,16 +11,26 @@ import android.widget.Toast
 class politicaPrivacidad : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.politica_de_privacidad)
+        setContentView(R.layout.politica_de_privacidad2)
 
-
-        val checkBoxPrivacidad = findViewById<CheckBox>(R.id.checkBox)
-
-
+        val checkBoxPrivacidad = findViewById<CheckBox>(R.id.checkBox2)
         val btnContinuar = findViewById<Button>(R.id.button2)
-        btnContinuar.isEnabled = checkBoxPrivacidad.isChecked
+
+        btnContinuar.isEnabled = false
+
         checkBoxPrivacidad.setOnCheckedChangeListener { _, isChecked ->
+
             btnContinuar.isEnabled = isChecked
+            if (isChecked) {
+
+                btnContinuar.setOnClickListener{
+                    signUp()
+
+
+                }
+
+            }
+
         }
     }
 
@@ -34,17 +44,11 @@ class politicaPrivacidad : AppCompatActivity() {
     }
 
 
-    fun signUp(view: View){
+    fun signUp(){
 
-        val checkBoxPrivacidad = findViewById<CheckBox>(R.id.checkBox)
-
-        if (checkBoxPrivacidad.isChecked) {
             val intent = Intent(this, registrarse::class.java)
             startActivity(intent)
-        } else {
 
-            Toast.makeText(this, "Por favor, acepta los términos de privacidad", Toast.LENGTH_SHORT).show()
-        }
     }
 
 

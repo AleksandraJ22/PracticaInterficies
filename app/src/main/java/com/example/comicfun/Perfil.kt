@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -11,6 +12,13 @@ class Perfil : AppCompatActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.pantalla_perfil)
+
+            val user = UserManager.currentUser
+
+            val nombreUsuarioTextView = findViewById<TextView>(R.id.textView31)
+            nombreUsuarioTextView.text = "Bienvenido, ${user?.NOMBRE}"
+           /* super.onCreate(savedInstanceState)
+            setContentView(R.layout.pantalla_perfil)*/
         }
 
 

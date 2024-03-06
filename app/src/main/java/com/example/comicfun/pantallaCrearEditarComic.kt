@@ -12,10 +12,6 @@ import android.widget.TextView
 
 class pantallaCrearEditarComic : AppCompatActivity() {
 
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)

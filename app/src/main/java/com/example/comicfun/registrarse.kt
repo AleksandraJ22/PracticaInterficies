@@ -100,8 +100,8 @@ class registrarse : AppCompatActivity() {
 
                 db.insertData(user)
 
-                val intent= Intent(this,pantallaCrearEditarComic::class.java).apply{}
-                startActivity(intent);
+unaVezRegistrado()
+
 
             } else if (pass1!=pass2){
                 Toast.makeText(this, "Las contraseñas deben coincidir", Toast.LENGTH_LONG).show()
@@ -114,19 +114,22 @@ class registrarse : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Por favor complete todos los campos correctamente", Toast.LENGTH_SHORT).show()
             }
+
+
+
         }
     }
 
 
-    fun volverPantallaInicio(view: View){
+  /*  fun volverPantallaInicio(view: View){
 
         val intent= Intent(this,MainActivity::class.java).apply{}
         startActivity(intent);
 
-    }
+    }*/
     fun unaVezRegistrado(){
 
-        val intent= Intent(this,pantallaCrearEditarComic::class.java).apply{}
+        val intent= Intent(this,iniciar_sesion::class.java).apply{}
         startActivity(intent);
 
     }

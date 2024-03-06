@@ -1,5 +1,6 @@
 package com.example.comicfun
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -7,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import android.widget.Toast
 import com.example.comicfun.data.Elemento
+import com.example.comicfun.data.comic
 
 
 //tabla usuarios
@@ -92,10 +94,10 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
 
                 ")"
 
-        db?.execSQL(createTablaComic)
-        db?.execSQL(createTablePanelComic)
+      //  db?.execSQL(createTablaComic)
+      //  db?.execSQL(createTablePanelComic)
 
-        db?.execSQL(createTableElemento)
+      ///  db?.execSQL(createTableElemento)
         db?.execSQL(create_table_users)
 
 
@@ -193,6 +195,33 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
         cursor.close()
 
         return count == 1
+    }
+    @SuppressLint("Range")
+    fun getUserData(user: String, contra: String): Usuarios? {
+        val db = this.readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_GMAIL = ? AND $COLUMN_PASSWORD = ?"
+
+        val cursor = db.rawQuery(query, arrayOf(user, contra))
+
+        var userData: Usuarios? = null
+
+        cursor.use { cursor ->
+            if (cursor.moveToFirst()) {
+                // Se encontró al menos un registro con las credenciales proporcionadas
+
+                val nombre = cursor.getString(cursor.getColumnIndex(COLUMN_NOMBRE));
+                val apellido = cursor.getString(cursor.getColumnIndex(COLUMN_APELLIDO));
+                // Obtén otros campos según sea necesario
+
+                // Crea un objeto Usuarios con los datos recuperados
+                userData = Usuarios(nombre, apellido, user, contra, mutableListOf<comic>())
+            }
+        }
+
+        cursor.close()
+        db.close()
+
+        return userData
     }
 
 

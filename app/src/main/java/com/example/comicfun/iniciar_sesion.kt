@@ -23,31 +23,59 @@ class iniciar_sesion : AppCompatActivity(){
         val DB = DBHandler(this)
 
         val btn_login: Button = findViewById(R.id.button4)
-
         btn_login.setOnClickListener{
+            val user = usuario.text.toString()
+            val password = contraseña.text.toString()
 
-
-            val user = usuario.getText().toString()
-            val contraseña = contraseña.text.toString()
-            if(user.isBlank() || contraseña.isBlank())
-
-            {
+            if(user.isBlank() || password.isBlank()) {
                 Toast.makeText(this, "Por favor rellena todos los campos",Toast.LENGTH_SHORT).show()
-            }else{
-                val checkUser = DB.loginCheckUser(user, contraseña)
-                if(checkUser){
+            } else {
 
+                val userData = DB.getUserData(user, password)
+                if(userData != null) {
                     Toast.makeText(this, "LogIn correcto",Toast.LENGTH_SHORT).show()
-                    val intent= Intent(this, pantallaCrearEditarComic::class.java).apply{}
-                    startActivity(intent);
 
-                }else{
+                    UserManager.currentUser = userData
 
+                    val intent= Intent(this, pantallaCrearEditarComic::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
                     Toast.makeText(this, "LogIn incorrecto",Toast.LENGTH_SHORT).show()
                 }
             }
-
         }
+
+        /*
+                btn_login.setOnClickListener{
+
+
+                    val user = usuario.getText().toString()
+                    val contraseña = contraseña.text.toString()
+                    if(user.isBlank() || contraseña.isBlank())
+
+                    {
+                        Toast.makeText(this, "Por favor rellena todos los campos",Toast.LENGTH_SHORT).show()
+                    }else{
+                        val checkUser = DB.loginCheckUser(user, contraseña)
+                        if(checkUser){
+
+                            Toast.makeText(this, "LogIn correcto",Toast.LENGTH_SHORT).show()
+
+
+                            UserManager.currentUser = user
+
+                            val intent= Intent(this, pantallaCrearEditarComic::class.java).apply{}
+                            startActivity(intent);
+                            finish()
+
+                        }else{
+
+                            Toast.makeText(this, "LogIn incorrecto",Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                }*/
 
     }
     fun forgotPassword(view: View){

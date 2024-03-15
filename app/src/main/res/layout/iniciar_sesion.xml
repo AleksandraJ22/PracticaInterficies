@@ -106,8 +106,7 @@
         style="@style/boton_tamaño_letra_alternativo"
 
 
-        android:onClick="rememberMe"
-        android:text="@string/rememberMe"
+        android:text="@string/btn_login"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

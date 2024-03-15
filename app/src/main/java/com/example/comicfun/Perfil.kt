@@ -13,10 +13,10 @@ class Perfil : AppCompatActivity() {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.pantalla_perfil)
 
-            val user = UserManager.currentUser
+          //  val user = UserManager.currentUser
 
-            val nombreUsuarioTextView = findViewById<TextView>(R.id.textView31)
-            nombreUsuarioTextView.text = "Bienvenido, ${user?.NOMBRE}"
+            //val nombreUsuarioTextView = findViewById<TextView>(R.id.textView31)
+            //nombreUsuarioTextView.text = "Bienvenido, ${user?.NOMBRE}"
            /* super.onCreate(savedInstanceState)
             setContentView(R.layout.pantalla_perfil)*/
         }

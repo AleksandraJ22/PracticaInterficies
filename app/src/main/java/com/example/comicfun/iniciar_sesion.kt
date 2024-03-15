@@ -38,6 +38,7 @@ class iniciar_sesion : AppCompatActivity(){
                     UserManager.currentUser = userData
 
                     val intent= Intent(this, pantallaCrearEditarComic::class.java)
+                    intent.putExtra("USERNAME", user)
                     startActivity(intent)
                     finish()
                 } else {
@@ -90,6 +91,7 @@ class iniciar_sesion : AppCompatActivity(){
 
 
         val intent= Intent(this, pantallaCrearEditarComic::class.java).apply{}
+
         startActivity(intent);
 
     }

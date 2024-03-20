@@ -59,52 +59,81 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
                 COLUMN_NOMBRE + " VARCHAR(256), " +
                 COLUMN_APELLIDO + " VARCHAR(256), " +
                 COLUMN_GMAIL + " VARCHAR(256) UNIQUE, " +
-                COLUMN_PASSWORD + " VARCHAR(256)" +
+                COLUMN_PASSWORD + " VARCHAR(256)"
+
 
                 ")";
 
-        val createTableHC = "CREATE TABLE " + TABLE_NAME_HISTORIAL_COMICS + "(" +
+     /*   val createTableHC = "CREATE TABLE " + TABLE_NAME_HISTORIAL_COMICS + "(" +
             COLUMN_ID_HC + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_ID_COMIC_USUARIO +" INTEGER, " +
                 COLUMN_ID_COMIC_DEL + " INTEGER, " +
                 "FOREIGN KEY($COLUMN_ID_COMIC_USUARIO) REFERENCES $TABLE_NAME($COLUMN_ID), " +
        "FOREIGN KEY($COLUMN_ID_COMIC_DEL) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC)" +
 
-       ")";
+       ")";*/
 
         val createTableElemento = "CREATE TABLE " + TABLE_NAME_ELEMENTOS  + "(" +
                 "$COLUMN_ID_ELEMENTO INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "$COLUMN_ID_PANEL INTEGER, " +
-                "$COLUMN_TIPO_ELEMENTO TEXT," +
-                "$COLUMN_IMAGEN_ELEMENTO INTEGER" +
-                ")"
+                "$COLUMN_TIPO_ELEMENTO VARCHAR(256)," +
+                "$COLUMN_IMAGEN_ELEMENTO INTEGER, " +
+               /* "FOREIGN KEY($COLUMN_ID_PANEL) REFERENCES $TABLE_NAME_PANEL_COMIC($COLUMN_ID_PANEL_COMIC)" +*/
+                ")";
 
-        val createTablaComic = "CREATE TABLE $TABLE_NAME_COMIC (" +
+
+      /*  val createTablaComic = "CREATE TABLE $TABLE_NAME_COMIC (" +
                 "$COLUMN_ID_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "$COLUMN_NOMBRE_COMIC TEXT, " +
                 "FOREIGN KEY($COLUMN_ID_COMIC_USER) REFERENCES $TABLE_NAME($COLUMN_ID)"+
+                ")"*/
+
+       /* val createTablaComic = "CREATE TABLE $TABLE_NAME_COMIC (" +
+                "$COLUMN_ID_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_NOMBRE_COMIC TEXT, " +
+                "$COLUMN_ID_COMIC_USER INTEGER, " +
+                "FOREIGN KEY($COLUMN_ID_COMIC_USER) REFERENCES $TABLE_NAME($COLUMN_ID)" +
                 ")"
-        val createTablePanelComic = "CREATE TABLE $TABLE_NAME_PANEL_COMIC (" +
+*/
+     /*   val createTablePanelComic = "CREATE TABLE $TABLE_NAME_PANEL_COMIC (" +
                 "$COLUMN_ID_PANEL_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "$COLUMN_ID_COMIC INTEGER, " +
                 "$COLUMN_IMAGE_FONDO INTEGER, " +
                 "$COLUMN_BURBUJA INTEGER, " +
                 "$COLUMN_PERSONAJE INTEGER, " +
-                "FOREIGN KEY($COLUMN_ID_COMIC) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC)" +
+                "FOREIGN KEY($COLUMN_ID_COMIC) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC), " +
+                "FOREIGN KEY($COLUMN_IMAGE_FONDO) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO)" +
 
-                ")"
+                ")"*/
+       /* val createTablePanelComic = "CREATE TABLE $TABLE_NAME_PANEL_COMIC (" +
+                "$COLUMN_ID_PANEL_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_ID_COMIC INTEGER, " +
+                "$COLUMN_IMAGE_FONDO INTEGER, " +
+                "$COLUMN_BURBUJA INTEGER, " +
+                "$COLUMN_PERSONAJE INTEGER, " +
+                "FOREIGN KEY($COLUMN_ID_COMIC) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC), " +
+                "FOREIGN KEY($COLUMN_IMAGE_FONDO) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO), " +
+                "FOREIGN KEY($COLUMN_BURBUJA) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO), " +
+                "FOREIGN KEY($COLUMN_PERSONAJE) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO)" +
+                ")"*/
+
 
       //  db?.execSQL(createTablaComic)
-      //  db?.execSQL(createTablePanelComic)
+      // db?.execSQL(createTablePanelComic)
 
-      ///  db?.execSQL(createTableElemento)
+     db?.execSQL(createTableElemento)
         db?.execSQL(create_table_users)
 
-
+      //  db?.execSQL(createTableHC)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_HISTORIAL_COMICS")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_ELEMENTOS")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_COMIC")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_PANEL_COMIC")
+
         onCreate(db)
     }
 
@@ -135,18 +164,27 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
     }
 
     fun insertDataTablaPersonajes(elem: Elemento){
+try {
+    val db = this.writableDatabase
+    val cv = ContentValues()
 
-            val db = this.writableDatabase
-            val values = ContentValues().apply {
-                put(COLUMN_ID_ELEMENTO, elem.idElemento)
-                put(COLUMN_ID_PANEL, elem.idPanel)
-                put(COLUMN_IMAGEN_ELEMENTO, elem.imagenElemento)
-                put(COLUMN_TIPO_ELEMENTO, elem.tipoElemento)
-            }
-            val newRowId = db.insert(TABLE_NAME_ELEMENTOS, null, values)
-            db.close()
+    cv.put(COLUMN_ID_PANEL, elem.idPanel)
+    cv.put(COLUMN_TIPO_ELEMENTO, elem.tipoElemento)
+    cv.put(COLUMN_IMAGEN_ELEMENTO, elem.imagenElemento)
 
 
+    val newRowId = db.insert("Elementos", null, cv)
+    Toast.makeText(context, "Hola", Toast.LENGTH_SHORT).show()
+    if (newRowId != -1L) {
+        Toast.makeText(context, "Elemento insertado correctamente", Toast.LENGTH_SHORT).show()
+
+    } else {
+        Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+
+    }
+} catch (e: Exception) {
+        Toast.makeText(context,"Error al insertar datos en la base de datos: ${e.message}",Toast.LENGTH_SHORT).show()
+    }
 
     }
 /*
@@ -223,6 +261,8 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
 
         return userData
     }
+
+
 
 
 }

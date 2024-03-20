@@ -18,9 +18,9 @@ class pantallaCrearEditarComic : AppCompatActivity() {
         setContentView(R.layout.pantalla_bienbenida)
         val nombreUsuarioTextView = findViewById<TextView>(R.id.textView10)
 
-        val username = intent.getStringExtra("USERNAME")
+        val username = intent.getStringExtra("nombre")
 
-        nombreUsuarioTextView.text = "${nombreUsuarioTextView.text}, ${username}"
+        nombreUsuarioTextView.text = "${nombreUsuarioTextView.text} , ${username}"
       /*  val bSalir: Button = findViewById(R.id.salir)
 
 

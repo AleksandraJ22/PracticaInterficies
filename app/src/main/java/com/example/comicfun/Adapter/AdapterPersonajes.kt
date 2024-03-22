@@ -26,9 +26,9 @@ class AdapterPersonajes(private val imagenes_de_personaje : ArrayList<Elemento>)
 
         val imagen = imagenes_de_personaje[position]
 
-        holder.personajeImageView.setImageResource(imagen.imagenElemento)
+       // holder.personajeImageView.setImageResource(imagen.imagenElemento)
 
-
+        imagen.imagenElemento?.let { holder.personajeImageView.setImageResource(it) }
     }
     override fun getItemCount(): Int {
         //  return 10

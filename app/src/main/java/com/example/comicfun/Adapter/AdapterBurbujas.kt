@@ -26,8 +26,8 @@ class AdapterBurbujas(private val imagesList : ArrayList<Elemento>) : RecyclerVi
 
         val imagen = imagesList[position]
 
-        holder.fondoImageView.setImageResource(imagen.imagenElemento)
-
+       // holder.fondoImageView.setImageResource(imagen.imagenElemento)
+        imagen.imagenElemento?.let { holder.fondoImageView.setImageResource(it) }
 
     }
     override fun getItemCount(): Int {

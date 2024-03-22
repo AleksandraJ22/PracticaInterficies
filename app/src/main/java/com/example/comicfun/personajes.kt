@@ -9,7 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterPersonajes
 import com.example.comicfun.data.Elemento
 
+
 class personajes : AppCompatActivity() {
+
+    val db = DBHandler(this)
+
 
     private lateinit var recyclerView: RecyclerView
 
@@ -19,7 +23,16 @@ class personajes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_personajes1)
+    //   val personaje1 = Elemento(null,null,R.drawable.personaje1, "personaje");
+        val personaje1 = Elemento(idElemento = null, idPanel = null, imagenElemento = R.drawable.personaje1, tipoElemento = "personaje")
 
+        /* val personaje2 = Elemento(null,null,R.drawable.personaje2, "personaje");
+         val personaje3 = Elemento(null,null,R.drawable.perssonaje3, "personaje");
+         val personaje4 = Elemento(null,null,R.drawable.personaje4, "personaje");*/
+        db.insertDataTablaPersonajes(personaje1);
+      /*  db.insertDataTablaPersonajes(personaje2);
+        db.insertDataTablaPersonajes(personaje3);
+        db.insertDataTablaPersonajes(personaje4);*/
 
         init()
       /*  val nuevoElemento = Elemento(
@@ -31,6 +44,9 @@ class personajes : AppCompatActivity() {
         val db = DBHandler(this)
         db.insertDataTablaPersonajes(nuevoElemento)
 */
+
+
+
     }
     private fun init(){
 

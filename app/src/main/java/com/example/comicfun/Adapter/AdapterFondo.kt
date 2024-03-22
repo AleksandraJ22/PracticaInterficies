@@ -35,7 +35,8 @@ class AdapterFondo(private val imagesList : ArrayList<Elemento>) : RecyclerView.
 
         val imagen = imagesList[position]
 
-        holder.fondoImageView.setImageResource(imagen.imagenElemento)
+     //   holder.fondoImageView.setImageResource(imagen.imagenElemento)
+        imagen.imagenElemento?.let { holder.fondoImageView.setImageResource(it) }
 holder.fondoImageView.setOnClickListener{
 
     Toast.makeText(holder.itemView.context, "Has seleccionado imagen", Toast.LENGTH_SHORT).show()

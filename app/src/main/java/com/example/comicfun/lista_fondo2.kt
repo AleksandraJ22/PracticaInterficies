@@ -4,16 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
-import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterFondo
-import com.example.comicfun.Adapter.AdapterFondo1
 import com.example.comicfun.data.Elemento
-import com.example.comicfun.data.panelComic
 
 
 class lista_fondo2 : AppCompatActivity() {

@@ -54,6 +54,7 @@ la recepción de estas comunicaciones vía electrónica.</string>
 
     <string name="aceptar">Aceptar</string>
     <string name="rememberMe">Remember me</string>
+    <string name="btn_login">Sign in</string>
 
     <string name="olvidado_contraseña"><u>forgot password</u></string>
 

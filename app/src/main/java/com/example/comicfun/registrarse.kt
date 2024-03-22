@@ -99,8 +99,13 @@ class registrarse : AppCompatActivity() {
                 )
 
                 db.insertData(user)
+                val intent= Intent(this, pantallaCrearEditarComic::class.java)
+                intent.putExtra("nombre", user.NOMBRE)
+                startActivity(intent);
 
-unaVezRegistrado()
+               // val intent= Intent(this,iniciar_sesion::class.java).apply{}
+               // startActivity(intent);
+//unaVezRegistrado()
 
 
             } else if (pass1!=pass2){
@@ -128,6 +133,7 @@ unaVezRegistrado()
 
     }*/
     fun unaVezRegistrado(){
+
 
         val intent= Intent(this,iniciar_sesion::class.java).apply{}
         startActivity(intent);

@@ -33,7 +33,7 @@ val COLUMN_TIPO_ELEMENTO = "tipoElemento"
 //tabla comic
 
 val TABLE_NAME_COMIC="Comic"
-val COLUMN_ID_COMIC="id"
+val COLUMN_ID_COMIC="idComic"
 val COLUMN_NOMBRE_COMIC = "nombre"
 val COLUMN_ID_COMIC_USER="idUser"
 
@@ -41,8 +41,7 @@ val COLUMN_ID_COMIC_USER="idUser"
 val TABLE_NAME_PANEL_COMIC = "panelComic"
 
 val COLUMN_LISTA_PANELES = "listaPaneles"
-val COLUMN_ID_PANEL_COMIC
-= "id"
+val COLUMN_ID_PANEL_COMIC = "id_panel_comic"
 val COLUMN_IMAGE_FONDO ="imageFondo"
 val COLUMN_BURBUJA ="burbuja"
 val COLUMN_PERSONAJE="personaje"
@@ -52,79 +51,78 @@ val COLUMN_ID_HC = "idHistorialComic"
 val COLUMN_ID_COMIC_USUARIO = "idUsuario"
 val COLUMN_ID_COMIC_DEL="idComic"
 class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null,1){
+    val create_table_users = "CREATE TABLE " + TABLE_NAME + " (" +
+            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            COLUMN_NOMBRE + " VARCHAR(256), " +
+            COLUMN_APELLIDO + " VARCHAR(256), " +
+            COLUMN_GMAIL + " VARCHAR(256) UNIQUE, " +
+            COLUMN_PASSWORD + " VARCHAR(256)" +
+
+
+    ")";
+
+      val createTableHC = "CREATE TABLE " + TABLE_NAME_HISTORIAL_COMICS + "(" +
+           COLUMN_ID_HC + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+               COLUMN_ID_COMIC_USUARIO +" INTEGER, " +
+               COLUMN_ID_COMIC_DEL + " INTEGER, " +
+               "FOREIGN KEY($COLUMN_ID_COMIC_USUARIO) REFERENCES $TABLE_NAME($COLUMN_ID), " +
+      "FOREIGN KEY($COLUMN_ID_COMIC_DEL) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC)" +
+
+      ")";
+
+
+    val createTableElemento = "CREATE TABLE $TABLE_NAME_ELEMENTOS (" +
+            "$COLUMN_ID_ELEMENTO INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "$COLUMN_ID_PANEL INTEGER, " +
+            "$COLUMN_TIPO_ELEMENTO TEXT, " + // Cambiado a TEXT en lugar de VARCHAR(256)
+            "$COLUMN_IMAGEN_ELEMENTO TEXT, " + // Cambiado a TEXT en lugar de INTEGER
+
+             "FOREIGN KEY($COLUMN_ID_PANEL) REFERENCES $TABLE_NAME_PANEL_COMIC($COLUMN_ID_PANEL_COMIC)" +
+            ")";
+
+
+
+
+     val createTablaComic = "CREATE TABLE $TABLE_NAME_COMIC (" +
+             "$COLUMN_ID_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
+             "$COLUMN_NOMBRE_COMIC TEXT, " +
+             "$COLUMN_ID_COMIC_USER INTEGER, " +
+             "FOREIGN KEY($COLUMN_ID_COMIC_USER) REFERENCES $TABLE_NAME($COLUMN_ID)" +
+             ")";
+
+    /*   val createTablePanelComic = "CREATE TABLE $TABLE_NAME_PANEL_COMIC (" +
+               "$COLUMN_ID_PANEL_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
+               "$COLUMN_ID_COMIC INTEGER, " +
+               "$COLUMN_IMAGE_FONDO INTEGER, " +
+               "$COLUMN_BURBUJA INTEGER, " +
+               "$COLUMN_PERSONAJE INTEGER, " +
+               "FOREIGN KEY($COLUMN_ID_COMIC) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC), " +
+               "FOREIGN KEY($COLUMN_IMAGE_FONDO) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO)" +
+
+               ")"*/
+     val createTablePanelComic = "CREATE TABLE $TABLE_NAME_PANEL_COMIC (" +
+             "$COLUMN_ID_PANEL_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
+             "$COLUMN_ID_COMIC INTEGER, " +
+
+             "$COLUMN_IMAGE_FONDO INTEGER, " +
+             "$COLUMN_BURBUJA INTEGER, " +
+             "$COLUMN_PERSONAJE INTEGER, " +
+             "FOREIGN KEY($COLUMN_ID_COMIC) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC), " +
+             "FOREIGN KEY($COLUMN_IMAGE_FONDO) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO), " +
+             "FOREIGN KEY($COLUMN_BURBUJA) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO), " +
+             "FOREIGN KEY($COLUMN_PERSONAJE) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO)" +
+             ")"
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val create_table_users = "CREATE TABLE " + TABLE_NAME + " (" +
-                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NOMBRE + " VARCHAR(256), " +
-                COLUMN_APELLIDO + " VARCHAR(256), " +
-                COLUMN_GMAIL + " VARCHAR(256) UNIQUE, " +
-                COLUMN_PASSWORD + " VARCHAR(256)"
 
 
-                ")";
-
-     /*   val createTableHC = "CREATE TABLE " + TABLE_NAME_HISTORIAL_COMICS + "(" +
-            COLUMN_ID_HC + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_ID_COMIC_USUARIO +" INTEGER, " +
-                COLUMN_ID_COMIC_DEL + " INTEGER, " +
-                "FOREIGN KEY($COLUMN_ID_COMIC_USUARIO) REFERENCES $TABLE_NAME($COLUMN_ID), " +
-       "FOREIGN KEY($COLUMN_ID_COMIC_DEL) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC)" +
-
-       ")";*/
-
-        val createTableElemento = "CREATE TABLE " + TABLE_NAME_ELEMENTOS  + "(" +
-                "$COLUMN_ID_ELEMENTO INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_ID_PANEL INTEGER, " +
-                "$COLUMN_TIPO_ELEMENTO VARCHAR(256)," +
-                "$COLUMN_IMAGEN_ELEMENTO INTEGER, " +
-               /* "FOREIGN KEY($COLUMN_ID_PANEL) REFERENCES $TABLE_NAME_PANEL_COMIC($COLUMN_ID_PANEL_COMIC)" +*/
-                ")";
-
-
-      /*  val createTablaComic = "CREATE TABLE $TABLE_NAME_COMIC (" +
-                "$COLUMN_ID_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_NOMBRE_COMIC TEXT, " +
-                "FOREIGN KEY($COLUMN_ID_COMIC_USER) REFERENCES $TABLE_NAME($COLUMN_ID)"+
-                ")"*/
-
-       /* val createTablaComic = "CREATE TABLE $TABLE_NAME_COMIC (" +
-                "$COLUMN_ID_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_NOMBRE_COMIC TEXT, " +
-                "$COLUMN_ID_COMIC_USER INTEGER, " +
-                "FOREIGN KEY($COLUMN_ID_COMIC_USER) REFERENCES $TABLE_NAME($COLUMN_ID)" +
-                ")"
-*/
-     /*   val createTablePanelComic = "CREATE TABLE $TABLE_NAME_PANEL_COMIC (" +
-                "$COLUMN_ID_PANEL_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_ID_COMIC INTEGER, " +
-                "$COLUMN_IMAGE_FONDO INTEGER, " +
-                "$COLUMN_BURBUJA INTEGER, " +
-                "$COLUMN_PERSONAJE INTEGER, " +
-                "FOREIGN KEY($COLUMN_ID_COMIC) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC), " +
-                "FOREIGN KEY($COLUMN_IMAGE_FONDO) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO)" +
-
-                ")"*/
-       /* val createTablePanelComic = "CREATE TABLE $TABLE_NAME_PANEL_COMIC (" +
-                "$COLUMN_ID_PANEL_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_ID_COMIC INTEGER, " +
-                "$COLUMN_IMAGE_FONDO INTEGER, " +
-                "$COLUMN_BURBUJA INTEGER, " +
-                "$COLUMN_PERSONAJE INTEGER, " +
-                "FOREIGN KEY($COLUMN_ID_COMIC) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC), " +
-                "FOREIGN KEY($COLUMN_IMAGE_FONDO) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO), " +
-                "FOREIGN KEY($COLUMN_BURBUJA) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO), " +
-                "FOREIGN KEY($COLUMN_PERSONAJE) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO)" +
-                ")"*/
-
-
-      //  db?.execSQL(createTablaComic)
-      // db?.execSQL(createTablePanelComic)
+        db?.execSQL(createTablaComic)
+      db?.execSQL(createTablePanelComic)
 
      db?.execSQL(createTableElemento)
         db?.execSQL(create_table_users)
 
-      //  db?.execSQL(createTableHC)
+        db?.execSQL(createTableHC)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -174,7 +172,7 @@ try {
 
 
     val newRowId = db.insert("Elementos", null, cv)
-    Toast.makeText(context, "Hola", Toast.LENGTH_SHORT).show()
+
     if (newRowId != -1L) {
         Toast.makeText(context, "Elemento insertado correctamente", Toast.LENGTH_SHORT).show()
 

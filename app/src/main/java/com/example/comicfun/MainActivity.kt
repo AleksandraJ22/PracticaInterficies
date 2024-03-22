@@ -7,7 +7,12 @@ import android.view.View
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var dbHandler: DBHandler
+    //val db = DBHandler(this)
     override fun onCreate(savedInstanceState: Bundle?) {
+        dbHandler=DBHandler(this)
+       // dbHandler.onCreate(dbHandler.writableDatabase)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_inicio)
 

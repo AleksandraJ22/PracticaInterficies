@@ -12,7 +12,7 @@ import com.example.comicfun.data.Elemento
 
 class lista_burbujas : AppCompatActivity() {
 
-
+    val db = DBHandler(this)
 
     private lateinit var recyclerView: RecyclerView
 
@@ -27,6 +27,11 @@ class lista_burbujas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_burbujas)
+        val burbuja1 = Elemento(idElemento = null, idPanel = null, imagenElemento = R.drawable.burbuja_dialogo, tipoElemento = "burbuja")
+
+
+        db.insertDataTablaPersonajes(burbuja1);
+
 
         init()
         init2()

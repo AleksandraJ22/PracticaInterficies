@@ -23,27 +23,10 @@ class personajes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_personajes1)
-    //   val personaje1 = Elemento(null,null,R.drawable.personaje1, "personaje");
-        val personaje1 = Elemento(idElemento = null, idPanel = null, imagenElemento = R.drawable.personaje1, tipoElemento = "personaje")
 
-         val personaje2 = Elemento(null,null,R.drawable.personaje2, "personaje");
-         val personaje3 = Elemento(null,null,R.drawable.perssonaje3, "personaje");
-         val personaje4 = Elemento(null,null,R.drawable.personaje4, "personaje");
-        db.insertDataTablaPersonajes(personaje1);
-       db.insertDataTablaPersonajes(personaje2);
-        db.insertDataTablaPersonajes(personaje3);
-        db.insertDataTablaPersonajes(personaje4);
 
         init()
-      /*  val nuevoElemento = Elemento(
-            1,
-            1,
-            R.drawable.personaje1,
-            "personaje"
-        )
-        val db = DBHandler(this)
-        db.insertDataTablaPersonajes(nuevoElemento)
-*/
+
 
 
 
@@ -65,10 +48,11 @@ class personajes : AppCompatActivity() {
     private fun addDataToList(){
 
 
-        personajes.add(Elemento(1,null,R.drawable.personaje1, "personaje"))
-        personajes.add(Elemento(2,null,R.drawable.personaje2,"personaje"))
-        personajes.add(Elemento(3,null,R.drawable.perssonaje3,"personaje"))
-        personajes.add(Elemento(4,null,R.drawable.personaje4,"personaje"))
+        val dbHelper = DBHandler(this)
+
+        val elementosFromDB = dbHelper.getElementoPersonaje() // Método para obtener todos los elementos de la base de datos
+
+        personajes.addAll(elementosFromDB)
 
     }
 

@@ -50,6 +50,12 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
     implementation("com.google.android.material:material:1.2.1")
+   // implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.0.0-beta1")
+
+    //implementation("com.github.PhilJay:MPAndroidChart-PDF:1.0.3")
+
+
 
 
 }

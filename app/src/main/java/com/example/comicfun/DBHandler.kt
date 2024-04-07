@@ -113,6 +113,15 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
              "FOREIGN KEY($COLUMN_PERSONAJE) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO)" +
              ")"
 
+
+val createRegistros = "CREATE TABLE registros(" +
+        "idRegistro INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        "dia TEXT, " +
+        "totalRegistros TEXT" +
+
+        ")"
+
+
     override fun onCreate(db: SQLiteDatabase?) {
 
 
@@ -123,6 +132,8 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
         db?.execSQL(create_table_users)
 
         db?.execSQL(createTableHC)
+        db?.execSQL(createRegistros)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -161,30 +172,36 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
         }
     }
 
-    fun insertDataTablaPersonajes(elem: Elemento){
-try {
-    val db = this.writableDatabase
-    val cv = ContentValues()
+    fun insertDataTablaPersonajes() {
+        try {
+            val db = this.writableDatabase
+            val cv = ContentValues()
 
-    cv.put(COLUMN_ID_PANEL, elem.idPanel)
-    cv.put(COLUMN_TIPO_ELEMENTO, elem.tipoElemento)
-    cv.put(COLUMN_IMAGEN_ELEMENTO, elem.imagenElemento)
+            val personajes = listOf(
+                Elemento(null, null, R.drawable.personaje1, "personaje"),
+                Elemento(null, null, R.drawable.personaje2, "personaje"),
+                Elemento(null, null, R.drawable.perssonaje3, "personaje"),
+                Elemento(null, null, R.drawable.personaje4, "personaje")
+            )
 
+            for (personaje in personajes) {
+                cv.put(COLUMN_ID_PANEL, personaje.idPanel)
+                cv.put(COLUMN_TIPO_ELEMENTO, personaje.tipoElemento)
+                cv.put(COLUMN_IMAGEN_ELEMENTO, personaje.imagenElemento)
 
-    val newRowId = db.insert("Elementos", null, cv)
+                val newRowId = db.insert(TABLE_NAME_ELEMENTOS, null, cv)
 
-    if (newRowId != -1L) {
-        Toast.makeText(context, "Elemento insertado correctamente", Toast.LENGTH_SHORT).show()
-
-    } else {
-        Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
-
+                if (newRowId != -1L) {
+                    //Toast.makeText(context, "Elemento insertado correctamente", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+        } catch (e: Exception) {
+            Toast.makeText(context, "Error al insertar datos en la base de datos: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
     }
-} catch (e: Exception) {
-        Toast.makeText(context,"Error al insertar datos en la base de datos: ${e.message}",Toast.LENGTH_SHORT).show()
-    }
 
-    }
 /*
     fun checkearUsuario(email: String): Boolean {
         val db = this.readableDatabase
@@ -260,6 +277,42 @@ try {
         return userData
     }
 
+fun getElementoPersonaje():List<Elemento>{
+
+    val elementos = mutableListOf<Elemento>()
+    val db = this.readableDatabase
+    val query = "SELECT * FROM $TABLE_NAME_ELEMENTOS WHERE $COLUMN_TIPO_ELEMENTO = 'personaje' "
+    val cursor = db.rawQuery(query,null)
+    cursor.use { // Garantiza que el cursor se cierre al finalizar el bloque
+        while (cursor.moveToNext()) {
+            val idIndex = cursor.getColumnIndex(COLUMN_ID_ELEMENTO)
+
+            val id_panel_index = cursor.getColumnIndex(COLUMN_ID_PANEL)
+
+            val imagenIndex = cursor.getColumnIndex(COLUMN_IMAGEN_ELEMENTO)
+            val tipoIndex = cursor.getColumnIndex(COLUMN_TIPO_ELEMENTO)
+
+
+            val idElemento = cursor.getInt(idIndex)
+            val panelId = cursor.getInt(id_panel_index)
+            val image = cursor.getInt(imagenIndex)
+            val tipo = cursor.getString(tipoIndex)
+
+
+
+            elementos.add(Elemento(idElemento, panelId, image, tipo))
+        }
+    }
+
+    return elementos;
+
+
+}
+
+    fun addElementos(){
+
+
+    }
 
 
 

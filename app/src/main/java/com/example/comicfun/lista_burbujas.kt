@@ -27,10 +27,10 @@ class lista_burbujas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_burbujas)
-        val burbuja1 = Elemento(idElemento = null, idPanel = null, imagenElemento = R.drawable.burbuja_dialogo, tipoElemento = "burbuja")
+        //val burbuja1 = Elemento(idElemento = null, idPanel = null, imagenElemento = R.drawable.burbuja_dialogo, tipoElemento = "burbuja")
 
 
-        db.insertDataTablaPersonajes(burbuja1);
+        //db.insertDataTablaPersonajes(burbuja1);
 
 
         init()

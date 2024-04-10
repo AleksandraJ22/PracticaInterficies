@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         dbHandler=DBHandler(this)
        // dbHandler.onCreate(dbHandler.writableDatabase)
+       // dbHandler.insertDataTablaPersonajes();
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_inicio)
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
+fun verGrafico(view:View){
 
+    val intent= Intent(this,GraficoBarras::class.java).apply{}
+    startActivity(intent);
+}
 
 }

@@ -47,6 +47,7 @@ class GraficoBarras : AppCompatActivity(){
     var tituloText = "Informe Semanal"
     val db = DBHandler(this)
 
+
     lateinit var context: Context
     lateinit var grafica: BarChart
 
@@ -84,20 +85,12 @@ val data: BarData = BarData(datos);
         grafica.invalidate();
 
 
-   var btnGenerarPdf = findViewById<Button>(R.id.btnExportar)
 
-        if(checkPermission()) {
-            Toast.makeText(this, "Permiso Aceptado", Toast.LENGTH_LONG)
-        } else {
-            requestPermissions()
-        }
-
-        btnGenerarPdf.setOnClickListener(View.OnClickListener {
-            generarPdf()
-        })
     }
+
+
     fun insertarRegistros(dias: Array<String>, registros: Array<String>) {
-      //  val meh= DBHandler(this)
+        //  val meh= DBHandler(this)
         //val admin = AdminSQLiteOpenHelper(context, "dbSistema", null, 1)
         val db2 = db.writableDatabase
         val values = ContentValues()
@@ -113,17 +106,12 @@ val data: BarData = BarData(datos);
 
 
     }
-
-
     fun obtenerRegistros()
     {
 
         listaRegistros.clear();
-      // val admin = AdminSQLiteOpenHelper(context, "dbSistema", null, 1)
-       val db2 = db.writableDatabase
-
-
-
+        // val admin = AdminSQLiteOpenHelper(context, "dbSistema", null, 1)
+        val db2 = db.readableDatabase
         val fila = db2.rawQuery("select * from registros", null);
         if (fila != null && fila.count != 0) {
             fila.moveToFirst()
@@ -144,90 +132,6 @@ val data: BarData = BarData(datos);
         db2.close()
 
 
-    }
-
-
-    fun generarPdf() {
-
-        var pdfDocument = PdfDocument()
-        var paint = Paint()
-        var titulo = TextPaint()
-        var descripcion = TextPaint()
-
-        var paginaInfo = PdfDocument.PageInfo.Builder(816, 1054, 1).create()
-        var pagina1 = pdfDocument.startPage(paginaInfo)
-
-        var canvas = pagina1.canvas
-
-        var bitmap = BitmapFactory.decodeResource(resources, R.drawable.logo)
-        var bitmapEscala = Bitmap.createScaledBitmap(bitmap, 80,80, false)
-        canvas.drawBitmap(bitmapEscala, 368f, 20f, paint)
-
-        titulo.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD))
-        titulo.textSize = 20f
-
-        canvas.drawText(tituloText, 10f, 150f, titulo)
-
-        descripcion.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL))
-        descripcion.textSize = 14f
-        var descripcionText =  "Lunes: " + listaRegistros[0] + "usuarios activos\n" +
-                "Martes: " + listaRegistros[1] + "usuarios activos \n" +
-                "Miercoles: " + listaRegistros[2] + "usuarios activos \n" +
-                "Jueves: " + listaRegistros[3] + "usuarios activos \n" +
-                "Viernes: " + listaRegistros[4] + "usuarios activos \n"
-               ;
-        var arrDescripcion = descripcionText.split("\n")
-
-        var y = 200f
-        for (item in arrDescripcion) {
-            canvas.drawText(item, 10f, y, descripcion)
-            y += 15
-        }
-
-        pdfDocument.finishPage(pagina1)
-
-        val file = File(Environment.getExternalStorageDirectory(), "comicFunInforme.pdf")
-
-        try {
-            pdfDocument.writeTo(FileOutputStream(file))
-            Toast.makeText(this, "Se creo el PDF correctamente", Toast.LENGTH_LONG).show()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-        pdfDocument.close()
-
-    }
-
-    private fun checkPermission(): Boolean {
-        val permission1 = ContextCompat.checkSelfPermission(applicationContext,android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        val permission2 = ContextCompat.checkSelfPermission(applicationContext, android.Manifest.permission.READ_EXTERNAL_STORAGE)
-        return permission1 == PackageManager.PERMISSION_GRANTED && permission2 == PackageManager.PERMISSION_GRANTED
-    }
-
-    private fun requestPermissions() {
-        ActivityCompat.requestPermissions(
-            this,
-            arrayOf(WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE),
-            200
-        )
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if(requestCode == 200) {
-            if(grantResults.size > 0) {
-                val writeStorage = grantResults[0] == PackageManager.PERMISSION_GRANTED
-                val readStorage = grantResults[1] == PackageManager.PERMISSION_GRANTED
-
-                if(writeStorage && readStorage) {
-                    Toast.makeText(this, "Permisos concedidos", Toast.LENGTH_LONG)
-                } else {
-                    Toast.makeText(this, "Permisos rechazados", Toast.LENGTH_LONG)
-                    finish()
-                }
-            }
-        }
     }
 
 }

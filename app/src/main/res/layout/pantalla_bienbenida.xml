@@ -48,8 +48,6 @@ android:gravity="center"
             style="@style/boton_actividad2"
 
 
-            android:onClick="crearComic"
-
             android:text="@string/crear_comic" />
 
 </LinearLayout>

@@ -98,9 +98,11 @@ class registrarse : AppCompatActivity() {
                     ,  mutableListOf<comic>()
                 )
 
-                db.insertData(user)
+                var id_del_user = db.insertData(user)
+
                 val intent= Intent(this, pantallaCrearEditarComic::class.java)
                 intent.putExtra("nombre", user.NOMBRE)
+                intent.putExtra("id",id_del_user)
                 startActivity(intent);
 
                // val intent= Intent(this,iniciar_sesion::class.java).apply{}

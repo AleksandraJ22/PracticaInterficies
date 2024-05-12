@@ -33,12 +33,12 @@ class seleccionarComic : AppCompatActivity() {
         listaDeComics = ArrayList()
 
 
-        addDataToList()
+        //addDataToList()
 
         adapter= AdapterSeleccionarComic(listaDeComics)
         rv.adapter = adapter
     }
-    private fun addDataToList(){
+   /* private fun addDataToList(){
 
 
         listaDeComics.add(comic(1, "comic1", ArrayList(),0))
@@ -51,7 +51,7 @@ class seleccionarComic : AppCompatActivity() {
         listaDeComics.add(comic(7,"comic7",ArrayList(),0))
         listaDeComics.add(comic(8, "comic8",ArrayList(),0))
 
-    }
+    }*/
     fun regresarAtras(view: View){
 
 

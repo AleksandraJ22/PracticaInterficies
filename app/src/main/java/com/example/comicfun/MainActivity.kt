@@ -50,23 +50,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-
-
     fun signIn(view: View){
         val intent= Intent(this, iniciar_sesion::class.java).apply{}
         startActivity(intent);
 
-
     }
-
-
 
     fun irAPoliticaDePrivacidad(){
 
         val intent= Intent(this,politicaPrivacidad::class.java).apply{}
         startActivity(intent);
-
 
     }
 

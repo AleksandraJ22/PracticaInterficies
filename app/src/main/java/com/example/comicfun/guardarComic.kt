@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 class guardarComic : AppCompatActivity() {
+    val db = DBHandler(this)
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +32,7 @@ class guardarComic : AppCompatActivity() {
             val nombreComic = editTextNombreComic.text.toString()
 
             if (nombreComic.isNotEmpty()) {
-
+//db.guardarComicEnBD()
                 guardarInformacionComic(nombreComic)
 
 
@@ -39,11 +40,6 @@ class guardarComic : AppCompatActivity() {
 
                     irAInicio(botonIrAInicio)
                 }
-
-
-
-
-
             } else {
                 Toast.makeText(this, "Por favor, ingresa un nombre para el cómic", Toast.LENGTH_SHORT).show()
             }
@@ -85,11 +81,7 @@ public fun cancelar() {
         editor.apply()
 
 
-        Toast.makeText(this, "Tu comic ha sido guardado!", Toast.LENGTH_SHORT).show()
-
-
-
-
+        //Toast.makeText(this, "Tu comic ha sido guardado!", Toast.LENGTH_SHORT).show()
 
     }
 

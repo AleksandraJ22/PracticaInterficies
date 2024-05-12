@@ -9,18 +9,31 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import com.example.comicfun.data.comic
 
 class pantallaCrearEditarComic : AppCompatActivity() {
+    val db = DBHandler(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_bienbenida)
+        val btn_crear_comic = findViewById<Button>(R.id.button6)
         val nombreUsuarioTextView = findViewById<TextView>(R.id.textView10)
 
         val username = intent.getStringExtra("nombre")
+        //val id_del_username=intent.getStringExtra("id")?.toInt()
+        val id_del_username = intent.getLongExtra("id",-1L).toInt()
 
         nombreUsuarioTextView.text = "${nombreUsuarioTextView.text} , ${username}"
+
+        btn_crear_comic.setOnClickListener {
+
+            val nuevoComic = comic("nuevoComic", id_del_username)
+
+            db.guardarComic(nuevoComic, id_del_username)
+crearComic()
+        }
       /*  val bSalir: Button = findViewById(R.id.salir)
 
 
@@ -33,10 +46,12 @@ class pantallaCrearEditarComic : AppCompatActivity() {
     }
 
 
-    fun crearComic(view:View){
+    fun crearComic(){
 
         val intent= Intent(this,CrearComic::class.java).apply{}
         startActivity(intent);
+
+
     }
 
 

@@ -11,9 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b135844b-931e-4273-84ba-cd0de739a5e9" name="Changes" comment="cambios? AdapterFondo1.kt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/CrearComic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/CrearComic.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/DBHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/DBHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/GraficoBarras.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/GraficoBarras.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/data/Comic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/data/Comic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/guardarComic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/guardarComic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/iniciar_sesion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/iniciar_sesion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/pantallaCrearEditarComic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/pantallaCrearEditarComic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/personajes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/personajes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/registrarse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/registrarse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/seleccionarComic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/seleccionarComic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pantalla_bienbenida.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pantalla_bienbenida.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

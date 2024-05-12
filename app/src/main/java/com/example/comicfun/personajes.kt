@@ -24,11 +24,8 @@ class personajes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_personajes1)
 
-
+        //db.insertDataTablaPersonajes()
         init()
-
-
-
 
     }
     private fun init(){

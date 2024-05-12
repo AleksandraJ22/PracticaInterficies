@@ -20,6 +20,7 @@ class iniciar_sesion : AppCompatActivity(){
 
         val usuario : EditText = findViewById(R.id.editText)
         val contraseña: EditText = findViewById(R.id.editTextTextPassword)
+
         val DB = DBHandler(this)
 
         val btn_login: Button = findViewById(R.id.button4)
@@ -39,6 +40,7 @@ class iniciar_sesion : AppCompatActivity(){
 
                     val intent= Intent(this, pantallaCrearEditarComic::class.java)
                     intent.putExtra("USERNAME", user)
+
                     startActivity(intent)
                     finish()
                 } else {

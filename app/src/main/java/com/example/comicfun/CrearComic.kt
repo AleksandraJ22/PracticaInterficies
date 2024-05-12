@@ -51,6 +51,9 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
         recyclerView.adapter = panelAdapter
     }
 
+
+
+
     private fun addDataToList(){
             val nuevoId = lista_panel.size
             lista_panel.add(panelComic(nuevoId + 1))
@@ -73,6 +76,8 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
 
                 Toast.makeText(this, "El limite maximo de paneles es 5!", Toast.LENGTH_SHORT).show()
             }
+
+
         }
 
     }

@@ -212,38 +212,10 @@ val createRegistros = "CREATE TABLE registros(" +
 
     }
 
-    /*fun crearComic(nombreComic: String, usuario_info: Usuarios,lista_panel: List<panelComic>) {
-        try {
-            val db = this.writableDatabase
-            val cv = ContentValues()
 
 
-            cv.put(COLUMN_NOMBRE_COMIC, nombreComic)
-            cv.put(COLUMN_ID_COMIC_USER, usuario_info.ID)
-            val comicId = db.insert(TABLE_NAME_COMIC, null, cv)
-
-            if (comicId != -1L) {
-                Toast.makeText(context, "Cómic creado correctamente", Toast.LENGTH_SHORT).show()
-
-                for (panel in lista_panel) {
-                    cv.clear()
-                    cv.put(COLUMN_ID_COMIC, comicId.toInt()) // Asociamos cada panel con el cómic recién creado
-                    // Aquí deberías poner la lógica para insertar los demás campos del panel en la tabla correspondiente
-                    val panelId = db.insert(TABLE_NAME_PANEL_COMIC, null, cv)
-                    if (panelId == -1L) {
-                        // Manejar el error si falla la inserción del panel
-                    }
-                }
-            } else {
-                Toast.makeText(context, "Error al crear el cómic", Toast.LENGTH_SHORT).show()
-            }
-        } catch (e: Exception) {
-            Toast.makeText(context, "Error al crear el cómic: ${e.message}", Toast.LENGTH_SHORT).show()
-        }
-    }
-*/
-
-    fun guardarComic(infoComic: comic, userId: Int) {
+    fun guardarComic(infoComic: comic, userId: Int) : Long{
+        var idComic = -1L
         try {
             val db = this.writableDatabase
             val cv = ContentValues()
@@ -251,8 +223,9 @@ val createRegistros = "CREATE TABLE registros(" +
             cv.put(COLUMN_NOMBRE_COMIC, infoComic.nombre)
             cv.put(COLUMN_ID_COMIC_USER, userId)
 
-            val result = db.insert(TABLE_NAME_COMIC, null, cv)
-            if (result != -1L) {
+            //val result = db.insert(TABLE_NAME_COMIC, null, cv)
+            idComic = db.insert(TABLE_NAME_COMIC, null, cv)
+            if (idComic != -1L) {
                 Toast.makeText(context, "Cómic guardado correctamente", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(context, "Error al guardar el cómic", Toast.LENGTH_SHORT).show()
@@ -260,77 +233,36 @@ val createRegistros = "CREATE TABLE registros(" +
         } catch (e: Exception) {
             Toast.makeText(context, "Error al guardar el cómic: ${e.message}", Toast.LENGTH_SHORT).show()
         }
+
+        return idComic
     }
 
-  /*  fun guardarComicEnBD(info_comic: comic,usuario: Usuarios){
-        try{
-        val db = this.writableDatabase
-        val cv = ContentValues()
-
-        cv.put(COLUMN_ID_COMIC_USUARIO, usuario.ID)
-        cv.put(COLUMN_ID_COMIC_DEL, info_comic.id)
 
 
 
-        val result = db.insert("$TABLE_NAME_HISTORIAL_COMICS", null, cv)
-        if (result != -1L) {
-            Toast.makeText(context, "Comic guardado correctamente", Toast.LENGTH_SHORT).show()
+    fun guardarPanelComic(panel: panelComic, comicId: Int) {
 
-
-        } else {
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
-
-        }
-    } catch (e: Exception) {
-        Toast.makeText(context,"Error al guardar comic en la bd: ${e.message}",Toast.LENGTH_SHORT).show()
-    }
-    }
-*/
-  /*  fun crearPaneles(comic_info: comic, usuario_info: Usuarios) {
         try {
             val db = this.writableDatabase
             val cv = ContentValues()
 
-            cv.put(COLUMN_ID_COMIC_USUARIO, usuario_info.ID)
-            cv.put(COLUMN_ID_COMIC, comic_info.id)
+            cv.put(COLUMN_ID_COMIC, comicId)
+            cv.put(COLUMN_IMAGE_FONDO, panel.imageFondo)
+            cv.put(COLUMN_BURBUJA, panel.burbuja)
+            cv.put(COLUMN_PERSONAJE, panel.personaje)
 
-            val result = db.insert("$TABLE_NAME_PANEL_COMIC", null, cv)
+            val result = db.insert(TABLE_NAME_PANEL_COMIC, null, cv)
             if (result != -1L) {
-                Toast.makeText(context, "Comic guardado correctamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Panel guardado correctamente", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Error al guardar el panel", Toast.LENGTH_SHORT).show()
             }
         } catch (e: Exception) {
-            Toast.makeText(context,"Error al guardar comic en la bd: ${e.message}",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Error al guardar el panel: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
-*/
 
 
-
-
-    /*fun saberCantidadPaneles(usuario_info: Usuarios){
-
-
-
-
-        /*
-
-          val createTablePanelComic = "CREATE TABLE $TABLE_NAME_PANEL_COMIC (" +
-             "$COLUMN_ID_PANEL_COMIC INTEGER PRIMARY KEY AUTOINCREMENT, " +
-             "$COLUMN_ID_COMIC INTEGER, " +
-
-             "$COLUMN_IMAGE_FONDO INTEGER, " +
-             "$COLUMN_BURBUJA INTEGER, " +
-             "$COLUMN_PERSONAJE INTEGER, " +
-             "FOREIGN KEY($COLUMN_ID_COMIC) REFERENCES $TABLE_NAME_COMIC($COLUMN_ID_COMIC), " +
-             "FOREIGN KEY($COLUMN_IMAGE_FONDO) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO), " +
-             "FOREIGN KEY($COLUMN_BURBUJA) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO), " +
-             "FOREIGN KEY($COLUMN_PERSONAJE) REFERENCES $TABLE_NAME_ELEMENTOS($COLUMN_IMAGEN_ELEMENTO)" +
-             ")"
-         */
-
-    }*/
 
     fun checkearUsuario(email: String): Boolean {
         val db = this.readableDatabase

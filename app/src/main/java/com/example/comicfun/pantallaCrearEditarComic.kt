@@ -31,8 +31,12 @@ class pantallaCrearEditarComic : AppCompatActivity() {
 
             val nuevoComic = comic("nuevoComic", id_del_username)
 
-            db.guardarComic(nuevoComic, id_del_username)
-crearComic()
+            var id_del_comic = db.guardarComic(nuevoComic, id_del_username)
+
+            val intent= Intent(this,CrearComic::class.java).apply{}
+            intent.putExtra("id_comic", id_del_comic)
+            startActivity(intent);
+//crearComic(id_del_comic)
         }
       /*  val bSalir: Button = findViewById(R.id.salir)
 

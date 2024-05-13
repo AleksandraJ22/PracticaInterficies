@@ -16,7 +16,7 @@ import com.example.comicfun.data.panelComic
 
 
 class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*/ {
-
+    val db = DBHandler(this)
 
     private lateinit var recyclerView: RecyclerView
 
@@ -31,8 +31,18 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_crear_comic)
+        val idComic = intent.getLongExtra("id_comic",-1L).toInt()
+        lista_panel = ArrayList()
+        lista_panel.add(panelComic(imageFondo = null, burbuja = null, personaje = null))
+
+
+     db.guardarPanelComic(lista_panel[0], idComic)
+
         init()
-        controlarPaneles()
+        controlarPaneles(idComic)
+
+
+
         //val listaFondo = lista_fondo()
         //listaFondo.setFondoSeleccionadoListener(this)
     }
@@ -42,9 +52,6 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager= LinearLayoutManager(this, RecyclerView.HORIZONTAL,false)
         lista_panel = ArrayList()
-
-
-
         addDataToList()
 
         panelAdapter= AdapterPanelComic(lista_panel)
@@ -55,31 +62,38 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
 
 
     private fun addDataToList(){
-            val nuevoId = lista_panel.size
-            lista_panel.add(panelComic(nuevoId + 1))
+
+
+            val nuevoId = lista_panel.size +1
+        lista_panel.add(panelComic(imageFondo = null, burbuja = null, personaje = null))
+            //lista_panel.add(panelComic(nuevoId + 1))
 
             //panelAdapter.notifyItemInserted(lista_panel.size - 1)
     }
 
-    private fun controlarPaneles(){
 
+
+    private fun controlarPaneles(id_del_comic: Int){
         botonAgregar = findViewById(R.id.btn_agregar_panel)
         botonAgregar.setOnClickListener {
-
             if (lista_panel.size < 5) {
-               addDataToList()
-                val ultimoPanel = lista_panel[lista_panel.size - 1]
-                Toast.makeText(this, "El panel creado tiene id ${ultimoPanel.id}", Toast.LENGTH_SHORT).show()
+                // Si aún no se han agregado 5 paneles, se procede a agregar uno nuevo
+                addDataToList()
+                val nuevoPanel = lista_panel.last()
+
+                // Se guarda el nuevo panel en la base de datos
+                db.guardarPanelComic(nuevoPanel, id_del_comic)
+
+                // Se notifica al adaptador que se ha insertado un nuevo elemento en la lista
                 panelAdapter.notifyItemInserted(lista_panel.size - 1)
                 recyclerView.scrollToPosition(lista_panel.size - 1)
+
+                Toast.makeText(this, "Se agregó un nuevo panel en la posición ${lista_panel.size - 1}", Toast.LENGTH_SHORT).show()
             } else {
-
-                Toast.makeText(this, "El limite maximo de paneles es 5!", Toast.LENGTH_SHORT).show()
+                // Si ya se han agregado 5 paneles, se muestra un mensaje de error
+                Toast.makeText(this, "El límite máximo de paneles es 5", Toast.LENGTH_SHORT).show()
             }
-
-
         }
-
     }
 
 
@@ -126,7 +140,7 @@ fun guardarComic(view:View){
     startActivity(intent);
 }
 
-   fun onFondoSeleccionado(panelId: Int, fondoElegido: Elemento) {
+ /*  fun onFondoSeleccionado(panelId: Int, fondoElegido: Elemento) {
 
         val imagenFondo =  fondoElegido.imagenElemento
         for (panel in lista_panel) {
@@ -137,5 +151,5 @@ fun guardarComic(view:View){
         }
     }
 
-
+*/
 }

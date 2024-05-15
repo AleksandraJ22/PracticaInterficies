@@ -40,12 +40,12 @@ fun getApellido(): String{
     }
 
 */
-    constructor(NOMBRE: String, APELLIDO: String, PASSWORD: String, GMAIL: String, historialComics: MutableList<comic>) {
+    constructor(NOMBRE: String, APELLIDO: String, PASSWORD: String, GMAIL: String) {
 
         this.NOMBRE=NOMBRE
         this.APELLIDO = APELLIDO
         this.PASSWORD= PASSWORD
         this.GMAIL=GMAIL
-    this.historialComics=historialComics
+ //   this.historialComics=historialComics
     }
 }

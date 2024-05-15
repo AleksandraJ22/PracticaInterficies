@@ -172,7 +172,32 @@ val createRegistros = "CREATE TABLE registros(" +
         return userId
 
     }
+   public fun insertUsuario(user: Usuarios): Boolean{
+        var resultado = false
+        var userId = -1L
+        try {
+            val db = this.writableDatabase
+            val cv = ContentValues()
 
+            cv.put(COLUMN_NOMBRE, user.NOMBRE)
+            cv.put(COLUMN_APELLIDO, user.APELLIDO)
+            cv.put(COLUMN_GMAIL, user.GMAIL)
+            cv.put(COLUMN_PASSWORD, user.PASSWORD)
+
+            userId = db.insert("Usuarios", null, cv)
+            //val result = db.insert("Usuarios", null, cv)
+
+            if (userId != -1L) {
+                resultado = true
+
+            }
+        } catch (e: Exception) {
+            Toast.makeText(context,"Error al insertar datos en la base de datos: ${e.message}",Toast.LENGTH_SHORT).show()
+        }
+
+        return resultado
+
+    }
     fun insertDataTablaPersonajes() {
         try {
             val db = this.writableDatabase
@@ -328,7 +353,7 @@ val createRegistros = "CREATE TABLE registros(" +
                 // Obtén otros campos según sea necesario
 
                 // Crea un objeto Usuarios con los datos recuperados
-                userData = Usuarios(nombre, apellido, user, contra, mutableListOf<comic>())
+                userData = Usuarios(nombre, apellido, user, contra)
             }
         }
 

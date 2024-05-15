@@ -95,7 +95,7 @@ class registrarse : AppCompatActivity() {
                     edUsuario_apellido.text.toString(),
                     pass1,
                     edUsuario_correo.text.toString()
-                    ,  mutableListOf<comic>()
+                    //,  mutableListOf<comic>()
                 )
 
                 var id_del_user = db.insertData(user)

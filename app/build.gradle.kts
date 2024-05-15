@@ -46,13 +46,17 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1")
     implementation("androidx.media3:media3-test-utils:1.2.1")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.mockito:mockito-core:3.+")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
     implementation("com.google.android.material:material:1.2.1")
    // implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation("com.github.PhilJay:MPAndroidChart:v3.0.0-beta1")
+    testImplementation("com.google.truth:truth:1.0.1")
 
+    androidTestImplementation("com.google.truth:truth:1.0.1")
     //implementation("com.github.PhilJay:MPAndroidChart-PDF:1.0.3")
 
 

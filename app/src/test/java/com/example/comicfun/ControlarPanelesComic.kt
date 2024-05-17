@@ -4,10 +4,7 @@ import org.junit.Assert.*
 import org.junit.Test
 
 
-import org.mockito.Mockito
-
-
-class RegistrationUtil1Test {
+class ControlarPanelesComic {
 
 
   ///  private lateinit var mockDbHandler: DBHandler

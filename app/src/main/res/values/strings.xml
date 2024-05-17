@@ -146,7 +146,11 @@ la recepción de estas comunicaciones vía electrónica.</string>
     <string name="btn_salir_de_vd">Salir</string>
 
 
+<string name="titulo_pantalla_explicacion_app">comicFun es...</string>
+<string name="explicacion_app_">comicFun es una aplicación que quiere dar las herramientas para aquellas que llevan la creatividad en las venas. \n\nEsta pensada para que la usen todos aquellos que quieran usarla, no tiene restricción de edad.
+    \n\nTiene divertidos personajes y formas de diálogo para crear escenas y situaciones divertidas. \n\nTambién puedes añadirle un fondo para darle ambiente a tu escena.\n
+comicFun es una herramienta de pasatiempo, facil y divertida de usar.
 
-
+</string>
 
 </resources>

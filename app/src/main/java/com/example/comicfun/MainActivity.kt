@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.text.TextPaint
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
@@ -69,7 +71,36 @@ fun verGrafico(view:View){
 
     val intent= Intent(this,GraficoBarras::class.java).apply{}
     startActivity(intent);
+
 }
+
+
+    fun verExplicacion(view: View?){
+
+        val intent= Intent(this,pantalla_explicacion_app::class.java).apply{}
+        startActivity(intent);
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        menuInflater.inflate(R.menu.menu_ver_explicacion, menu)
+        return true
+    }
+
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (id == R.id.Explicación_app) {
+            verExplicacion(null)
+            return true
+        }
+
+
+        return super.onOptionsItemSelected(item)
+    }
+
 
 }
 

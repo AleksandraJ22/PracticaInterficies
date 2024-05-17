@@ -59,8 +59,6 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
     }
 
 
-
-
     private fun addDataToList(){
 
 

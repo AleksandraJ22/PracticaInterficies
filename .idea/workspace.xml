@@ -10,14 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b135844b-931e-4273-84ba-cd0de739a5e9" name="Changes" comment="cambios? AdapterFondo1.kt">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/RegistrationUtil1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/comicfun/RegistrationUtil1Test.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/comicfun/insert_user_db.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/pantalla_explicacion_app.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/explicacion_app.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_ver_explicacion.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/DBHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/DBHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/Usuarios.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/Usuarios.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/registrarse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/registrarse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/CrearComic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/CrearComic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/comicfun/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/comicfun/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/comicfun/ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/comicfun/RegistrationUtil1Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/example/comicfun/ControlarPanelesComic.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,10 +75,10 @@
       <list>
         <option value="valueResourceFile" />
         <option value="resourceFile" />
-        <option value="layoutResourceFile" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
         <option value="JUnit4 Test Class" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -98,26 +100,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/aleks/PracticaInterficies/app/src/test/java/com/example/comicfun&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleks/Downloads&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cidr.known.project.marker": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "last_directory_selection": "C:/Users/aleks/PracticaInterficies/app/src/test/java/com/example/comicfun",
+    "last_opened_file_path": "C:/Users/aleks/PracticaInterficies/app/src/main/res/menu",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aleks\PracticaInterficies\app\src\main\res\menu" />
       <recent name="C:\Users\aleks\PracticaInterficies\app\src\main\res\layout" />
       <recent name="C:\Users\aleks\PracticaInterficies\app\src\main\res\drawable" />
       <recent name="C:\Users\aleks\AndroidStudioProjects\comicFun\app\src\main\res\layout" />
       <recent name="C:\Users\aleks\AndroidStudioProjects\comicFun\app\src\main\res\drawable" />
-      <recent name="C:\Users\aleks\AndroidStudioProjects\comicFun\app\src\main\res\values" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aleks\PracticaInterficies\app\src\test\java\com\example\comicfun" />
@@ -128,6 +131,7 @@
       <recent name="" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.comicfun" />
       <recent name="com.example.comicfun.data" />
       <recent name="com.example.comicfun.Adapter" />
     </key>

@@ -4,11 +4,14 @@ package com.example.comicfun
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.example.comicfun.data.comic
 
 class pantallaCrearEditarComic : AppCompatActivity() {
@@ -26,7 +29,11 @@ class pantallaCrearEditarComic : AppCompatActivity() {
         val id_del_username = intent.getLongExtra("id",-1L).toInt()
 
         nombreUsuarioTextView.text = "${nombreUsuarioTextView.text} , ${username}"
+        ///val buttonShowPopup = findViewById<Button>(R.id.button_show_popup)
 
+       // buttonShowPopup.setOnClickListener {
+            showAlertDialog()
+        //}
         btn_crear_comic.setOnClickListener {
 
             val nuevoComic = comic("nuevoComic", id_del_username)
@@ -105,5 +112,17 @@ finish()
         return super.onOptionsItemSelected(item)
     }
 
+    private fun showAlertDialog() {
 
+        val builder = AlertDialog.Builder(this)
+      //  builder.setTitle("necesitas ayuda...?")
+        builder.setMessage("\nDale al botón CREAR para iniciar un nuevo comic \no a EDITAR para recuperar uno ya existente.")
+        builder.setCancelable(true) // Makes the dialog cancellable by tapping outside or pressing back
+        val dialog = builder.create()
+        dialog.show()
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            dialog.dismiss()
+        }, 5000)
+    }
 }

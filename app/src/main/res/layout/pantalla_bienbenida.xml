@@ -29,12 +29,11 @@ android:gravity="center"
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:layout_marginTop="52dp"
             android:background="@color/transparente"
             android:text="@string/opcion"
-            android:textSize="16dp"
-         />
+            android:textColor="@color/black"
+            android:textSize="20dp" />
 
 
         <Button
@@ -47,7 +46,15 @@ android:gravity="center"
             android:id="@+id/button6"
             style="@style/boton_actividad2"
 
-
             android:text="@string/crear_comic" />
+
+        <!--
+
+        <Button
+
+            android:id="@+id/button_show_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop_up_texto_pantalla_crear_editar_comic" /> -->
 
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.comicfun
 
 import android.Manifest
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -17,6 +18,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -28,7 +30,16 @@ import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var dbHandler: DBHandler
+   // private lateinit var textViewToggle: TextView
+   // private lateinit var buttonToggle: Button
+    //private val sharedPreferences by lazy { getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE) }
+
+    /*companion object {
+        private const val PREFS_NAME = "TogglePrefs"
+        private const val TEXT_VISIBLE_KEY = "textVisible"
+    }*/
     //val db = DBHandler(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         dbHandler=DBHandler(this)
@@ -40,9 +51,22 @@ class MainActivity : AppCompatActivity() {
      /*   val btn_generar_pdf : Button = findViewById(R.id.btn_pdf)
 
         btn_generar_pdf.setOnClickListener {
+        }*/
 
+      /*  textViewToggle = findViewById(R.id.textViewToggle)
+        buttonToggle = findViewById(R.id.buttonToggle)
 
+        val isTextVisible = sharedPreferences.getBoolean(TEXT_VISIBLE_KEY, false)
+        textViewToggle.visibility = if (isTextVisible) View.VISIBLE else View.GONE
 
+        buttonToggle.setOnClickListener {
+            if (textViewToggle.visibility == View.GONE) {
+                textViewToggle.visibility = View.VISIBLE
+                saveTextVisibility(true)
+            } else {
+                textViewToggle.visibility = View.GONE
+                saveTextVisibility(false)
+            }
         }*/
         val btn_registro : Button = findViewById(R.id.button3)
         btn_registro.setOnClickListener{
@@ -51,6 +75,10 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+   /* private fun saveTextVisibility(isVisible: Boolean) {
+        sharedPreferences.edit().putBoolean(TEXT_VISIBLE_KEY, isVisible).apply()
+    }*/
 
     fun signIn(view: View){
         val intent= Intent(this, iniciar_sesion::class.java).apply{}

@@ -190,6 +190,9 @@
             </intent-filter>
         </activity>
 
+
+
+        <activity android:name=".pantalla_explicacion_app" />
     </application>
 
 </manifest>

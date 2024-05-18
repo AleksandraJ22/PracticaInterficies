@@ -58,6 +58,9 @@ class DBHandler(var context: Context): SQLiteOpenHelper(context,DATABASE_NAME,nu
     val dias: Array<String> = arrayOf("Lunes", "Martes", "Miércoles", "Jueves", "Viernes")
 
     val registros: Array<String> = arrayOf("100", "22", "35", "600", "87")
+
+
+    override fun onCreate(db: SQLiteDatabase?) {
     val create_table_users = "CREATE TABLE " + TABLE_NAME + " (" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_NOMBRE + " VARCHAR(256), " +
@@ -119,7 +122,7 @@ val createRegistros = "CREATE TABLE registros(" +
         ")"
 
 
-    override fun onCreate(db: SQLiteDatabase?) {
+
 
 
         db?.execSQL(createTablaComic)

@@ -16,6 +16,8 @@ import com.example.comicfun.data.comic
 class AdapterSeleccionarComic(private val listaComics : ArrayList<comic>) : RecyclerView.Adapter<AdapterSeleccionarComic.ViewHolder>() {
 
 
+    private var listaComicsFull: ArrayList<comic> = ArrayList(listaComics)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.fila_seleccionar_comic, parent, false)
@@ -57,6 +59,21 @@ class AdapterSeleccionarComic(private val listaComics : ArrayList<comic>) : Recy
             }
         }
 
+    }
+
+
+    fun filter(text: String) {
+        listaComics.clear()
+        if (text.isEmpty()) {
+            listaComics.addAll(listaComicsFull)
+        } else {
+            for (item in listaComicsFull) {
+                if (item.nombre.toLowerCase().contains(text.toLowerCase())) {
+                    listaComics.add(item)
+                }
+            }
+        }
+        notifyDataSetChanged()
     }
 
 }

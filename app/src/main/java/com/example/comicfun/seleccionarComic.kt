@@ -24,7 +24,6 @@ class seleccionarComic : AppCompatActivity() {
         init()
     }
 
-
     private fun init(){
 
         rv = findViewById(R.id.recyclerView)

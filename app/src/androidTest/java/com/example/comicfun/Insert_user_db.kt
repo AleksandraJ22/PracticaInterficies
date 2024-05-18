@@ -1,3 +1,4 @@
+/*
 package com.example.comicfun
 
 import android.content.Context
@@ -28,8 +29,11 @@ class insert_user_db {
 
     }
 
- /*   @Test
+ */
+/*   @Test
     fun checkearUsuario() {
-    }*/
+    }*//*
+
 }
 
+*/

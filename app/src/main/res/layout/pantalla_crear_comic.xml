@@ -113,9 +113,11 @@
         android:layout_height="49dp"
         android:layout_marginTop="16dp"
         android:background="@color/transparente"
+        android:tooltipText="Puedes agrandar tu imagen"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
         app:srcCompat="@drawable/agrandar"
-        tools:layout_editor_absoluteX="17dp" />
+        tools:layout_editor_absoluteX="17dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/imageButton5"
@@ -123,6 +125,7 @@
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:background="@color/transparente"
+        android:tooltipText="Puedes invertir la imagen"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
@@ -136,6 +139,21 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/transparente"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
+        android:tooltipText="Puedes deshacerte de un elemento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageButton5"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/basura2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

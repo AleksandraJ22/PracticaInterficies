@@ -2,8 +2,11 @@ package com.example.comicfun
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -49,10 +52,13 @@ class lista_fondo2 : AppCompatActivity() {
         // val fondoSeleccionadoId = intent.getIntExtra("fondo_seleccionado_id", -1)
         btn_OK_fondo = findViewById(R.id.buttonOK)
 
+
+
         init()
         init2()
         init3()
-        btn_OK_fondo = findViewById(R.id.buttonOK)
+
+
         /*  btn_OK_fondo.setOnClickListener {
               OkFondo(it)
           }*/
@@ -154,6 +160,8 @@ class lista_fondo2 : AppCompatActivity() {
 
     }
 
+
+
     /*
  fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -220,9 +228,15 @@ return imagesList
 
   */
 
-    fun volverSinSeleccionarFondo(view: View){
+    fun volverSinSeleccionarFondo(){
 
 
+        val intent= Intent(this, CrearComic::class.java).apply{}
+        startActivity(intent);
+
+    }
+
+    fun volverSinSeleccionarFondoDandoAOK(){
         val intent= Intent(this, CrearComic::class.java).apply{}
         startActivity(intent);
 

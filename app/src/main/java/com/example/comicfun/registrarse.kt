@@ -85,8 +85,11 @@ class registrarse : AppCompatActivity() {
         btn_usuario_registrar.setOnClickListener{
             val pass1 = edUsuario_pass1.text.toString()
             val pass2 = edUsuario_pass2.text.toString()
+ //comprobamos contraseña
+            var contraseñaOK = comprobar_contraseña(pass1, pass2)
 
-            if (pass1 == pass2 && pass1.length >= 6 && pass1.any { it.isUpperCase() } && pass1.any { it.isLowerCase() } &&
+          //  pass1 == pass2 && pass1.length >= 6 && pass1.any { it.isUpperCase() } && pass1.any { it.isLowerCase() }
+            if (contraseñaOK &&
                 edUsuario_nombre.text.isNotEmpty() && edUsuario_apellido.text.isNotEmpty() && edUsuario_correo.text.isNotEmpty() &&
                 edUsuario_correo.text.toString().contains("@") && (db.registerCheckUser(edUsuario_correo.text.toString()))) {
 
@@ -141,4 +144,22 @@ class registrarse : AppCompatActivity() {
         startActivity(intent);
 
     }
+    public fun comprobar_contraseña(pass1: String, pass2: String): Boolean{
+
+var res = false
+if(pass1==pass2){
+    val letra_mayuscula: Boolean = pass1.any { it.isUpperCase() }
+    val cuantasLetras : Boolean = pass1.count() >= 6
+   if(letra_mayuscula && cuantasLetras ){
+       res = true
+
+   }
+}
+return res;
+    }
+
+
+
+
+
 }

@@ -101,6 +101,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginBottom="48dp"
 
+        android:onClick="volverSinSeleccionarFondoDandoAOK"
         android:text="@string/okei"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

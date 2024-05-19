@@ -1,13 +1,18 @@
 package com.example.comicfun
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import android.widget.FrameLayout
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterPersonajes
 import com.example.comicfun.data.Elemento
+import com.google.android.material.snackbar.Snackbar
 
 
 class personajes : AppCompatActivity() {
@@ -28,6 +33,7 @@ class personajes : AppCompatActivity() {
         init()
 
     }
+
     private fun init(){
 
         recyclerView = findViewById(R.id.Recycler_View)
@@ -55,8 +61,6 @@ class personajes : AppCompatActivity() {
 
     fun OkPersonaje(view:View){
 
-
-
         val intent= Intent(this, CrearComic::class.java).apply{}
         startActivity(intent);
 
@@ -71,5 +75,6 @@ class personajes : AppCompatActivity() {
 
 
     }
+
 
 }

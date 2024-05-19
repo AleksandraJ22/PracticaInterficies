@@ -4,7 +4,10 @@ package com.example.comicfun
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.comicfun.Adapter.AdapterSeleccionarComic
@@ -22,6 +25,7 @@ class seleccionarComic : AppCompatActivity() {
 
 
         init()
+        showAlertDialog()
     }
 
     private fun init(){
@@ -73,5 +77,20 @@ class seleccionarComic : AppCompatActivity() {
         startActivity(intent);
 
     }
+
+    private fun showAlertDialog() {
+
+        val builder = AlertDialog.Builder(this)
+        //  builder.setTitle("necesitas ayuda...?")
+        builder.setMessage("Empieza por crear un nuevo comic ;)")
+        builder.setCancelable(true) // Makes the dialog cancellable by tapping outside or pressing back
+        val dialog = builder.create()
+        dialog.show()
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            dialog.dismiss()
+        }, 5000)
+    }
+
 
 }

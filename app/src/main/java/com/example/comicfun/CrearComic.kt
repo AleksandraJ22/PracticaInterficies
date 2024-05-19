@@ -1,10 +1,18 @@
 package com.example.comicfun
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.Gravity
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
+import android.widget.FrameLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,6 +21,7 @@ import com.example.comicfun.Adapter.AdapterPanelComic
 import com.example.comicfun.data.Elemento
 
 import com.example.comicfun.data.panelComic
+import com.google.android.material.snackbar.Snackbar
 
 
 class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*/ {
@@ -32,6 +41,7 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pantalla_crear_comic)
         val idComic = intent.getLongExtra("id_comic",-1L).toInt()
+        val id_del_user=intent.getLongExtra("id_user",-1)
         lista_panel = ArrayList()
         lista_panel.add(panelComic(imageFondo = null, burbuja = null, personaje = null))
 
@@ -40,7 +50,7 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
 
         init()
         controlarPaneles(idComic)
-
+        showAlertDialog()
 
 
         //val listaFondo = lista_fondo()
@@ -69,6 +79,19 @@ class CrearComic : AppCompatActivity()/*, lista_fondo.FondoSeleccionadoListener*
             //panelAdapter.notifyItemInserted(lista_panel.size - 1)
     }
 
+    private fun showAlertDialog() {
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Consejo:")
+        builder.setMessage("Mantén los iconos presionados para saber su uso ;)")
+        builder.setCancelable(true) // Makes the dialog cancellable by tapping outside or pressing back
+        val dialog = builder.create()
+        dialog.show()
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            dialog.dismiss()
+        }, 5000)
+    }
 
 
     private fun controlarPaneles(id_del_comic: Int){
@@ -135,6 +158,7 @@ fun guardarComic(view:View){
 
 
     val intent = Intent(this, guardarComic::class.java).apply{}
+
     startActivity(intent);
 }
 

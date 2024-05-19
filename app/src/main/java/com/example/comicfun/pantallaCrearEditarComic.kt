@@ -27,12 +27,13 @@ class pantallaCrearEditarComic : AppCompatActivity() {
         val username = intent.getStringExtra("nombre")
         //val id_del_username=intent.getStringExtra("id")?.toInt()
         val id_del_username = intent.getLongExtra("id",-1L).toInt()
+        showAlertDialog()
 
         nombreUsuarioTextView.text = "${nombreUsuarioTextView.text} , ${username}"
         ///val buttonShowPopup = findViewById<Button>(R.id.button_show_popup)
 
        // buttonShowPopup.setOnClickListener {
-            showAlertDialog()
+
         //}
         btn_crear_comic.setOnClickListener {
 
@@ -40,8 +41,10 @@ class pantallaCrearEditarComic : AppCompatActivity() {
 
             var id_del_comic = db.guardarComic(nuevoComic, id_del_username)
 
+
             val intent= Intent(this,CrearComic::class.java).apply{}
             intent.putExtra("id_comic", id_del_comic)
+            intent.putExtra("id_user",id_del_username)
             startActivity(intent);
 //crearComic(id_del_comic)
         }
@@ -123,6 +126,6 @@ finish()
 
         Handler(Looper.getMainLooper()).postDelayed({
             dialog.dismiss()
-        }, 5000)
+        }, 8000)
     }
 }

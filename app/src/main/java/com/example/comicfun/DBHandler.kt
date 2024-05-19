@@ -121,10 +121,6 @@ val createRegistros = "CREATE TABLE registros(" +
 
         ")"
 
-
-
-
-
         db?.execSQL(createTablaComic)
       db?.execSQL(createTablePanelComic)
 
@@ -265,7 +261,35 @@ val createRegistros = "CREATE TABLE registros(" +
         return idComic
     }
 
+    fun cambiarNombreComic(nombreNuevo: String, userId: Int): Int {
+        var idComic = -1
 
+        try {
+            val db = this.writableDatabase
+            val cv = ContentValues()
+
+            cv.put(COLUMN_NOMBRE_COMIC, nombreNuevo)
+
+
+            val whereClause = "$COLUMN_ID_COMIC_USER = ?"
+            val whereArgs = arrayOf(userId.toString())
+
+
+            idComic = db.update(TABLE_NAME_COMIC, cv, whereClause, whereArgs)
+
+            if (idComic != -1) {
+
+                Toast.makeText(context, "Nuevo nombre: "+ {nombreNuevo}, Toast.LENGTH_SHORT).show()
+
+            } else {
+                Toast.makeText(context, "Error al actualizar el cómic", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            Toast.makeText(context, "Error al actualizar el cómic: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
+
+        return idComic
+    }
 
 
     fun guardarPanelComic(panel: panelComic, comicId: Int) {
@@ -302,6 +326,8 @@ val createRegistros = "CREATE TABLE registros(" +
         return count==0
 
     }
+
+
 /*
     fun usuarioExiste(email: String): Int{
         val db = this.readableDatabase
@@ -338,6 +364,8 @@ val createRegistros = "CREATE TABLE registros(" +
 
         return count == 1
     }
+
+
     @SuppressLint("Range")
     fun getUserData(user: String, contra: String): Usuarios? {
         val db = this.readableDatabase

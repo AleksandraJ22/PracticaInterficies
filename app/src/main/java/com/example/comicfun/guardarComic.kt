@@ -9,6 +9,8 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -28,14 +30,15 @@ class guardarComic : AppCompatActivity() {
         val botonGuardar: Button = findViewById(R.id.boton)
         val botonIrAInicio:TextView = findViewById(R.id.textView30)
 
+        showAlertDialog()
+
         botonGuardar.setOnClickListener {
             val nombreComic = editTextNombreComic.text.toString()
 
             if (nombreComic.isNotEmpty()) {
 //db.guardarComicEnBD()
-                guardarInformacionComic(nombreComic)
-
-
+               guardarInformacionComic(nombreComic)
+//db.cambiarNombreComic(nombreComic, )
                 botonIrAInicio.setOnClickListener {
 
                     irAInicio(botonIrAInicio)
@@ -61,6 +64,19 @@ class guardarComic : AppCompatActivity() {
             irAInicio(botonIrAInicio)
         }*/
 
+    private fun showAlertDialog() {
+
+        val builder = AlertDialog.Builder(this)
+
+        builder.setMessage("Si quieres, puedes actualizar el nombre de tu comic")
+        builder.setCancelable(true) // Makes the dialog cancellable by tapping outside or pressing back
+        val dialog = builder.create()
+        dialog.show()
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            dialog.dismiss()
+        }, 5000)
+    }
 
 
 public fun aceptar() {
@@ -90,7 +106,6 @@ public fun cancelar() {
 
         val intent= Intent(this,pantallaCrearEditarComic::class.java).apply{}
         startActivity(intent);
-
 
     }
 }

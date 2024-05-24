@@ -126,6 +126,6 @@ finish()
 
         Handler(Looper.getMainLooper()).postDelayed({
             dialog.dismiss()
-        }, 8000)
+        }, 10000)
     }
 }
